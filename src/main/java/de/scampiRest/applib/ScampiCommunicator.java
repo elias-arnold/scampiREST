@@ -1,5 +1,11 @@
 package de.scampiRest.applib;
 
+import java.util.concurrent.TimeUnit;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import de.scampiRest.controller.ScampiController;
 import fi.tkk.netlab.dtn.scampi.applib.*;
 
 /**
@@ -10,67 +16,38 @@ import fi.tkk.netlab.dtn.scampi.applib.*;
  */
 public class ScampiCommunicator {
 	static private final AppLib APP_LIB = AppLib.builder().build();
-
+	private static final Logger logger = LoggerFactory.getLogger(ScampiCommunicator.class);
+	private final String wildcardSubscribe = "Hello Service"; 
+	
 	public ScampiCommunicator() {
 		try {
 			// Setup
 			APP_LIB.start();
-			APP_LIB.addLifecycleListener(new LifeCyclePrinter());
+			APP_LIB.addLifecycleListener(new ScampiLifeCyclePrinter());
 			APP_LIB.connect();
 
 			// Subscribe to a service
-			APP_LIB.addMessageReceivedCallback(new MessagePrinter());
-			APP_LIB.subscribe("Hello Service");
+			APP_LIB.addMessageReceivedCallback(new ScampiMessageHandler());
+			APP_LIB.subscribe(wildcardSubscribe);
 
-			// Publish a message
-			APP_LIB.publish(getMessage("Hello World!"), "Hello Service");
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Error establishing scampi",e);
 		}
-
 	}
 
-	private static SCAMPIMessage getMessage(String text) {
-		SCAMPIMessage message = SCAMPIMessage.builder().appTag("Hello").build();
-		message.putString("text", text);
+	public void subscribe(String service) throws InterruptedException{
+		APP_LIB.subscribe(service);
+	}
+	
+	public void publish(SCAMPIMessage message, String service) throws InterruptedException{
+		APP_LIB.publish(message, service);
+	}
+	
+	public SCAMPIMessage getMessage(String version){
+		SCAMPIMessage message = SCAMPIMessage.builder()
+				.lifetime( 1, TimeUnit.DAYS )
+				.persistent( false ) 
+				.appTag( version ) .build();
 		return message;
-	}
-
-	private static final class LifeCyclePrinter implements AppLibLifecycleListener {
-
-		@Override
-		public void onConnected(String scampiId) {
-			System.out.println("> onConnected: " + scampiId);
-		}
-
-		@Override
-		public void onDisconnected() {
-			System.out.println("> onDisconnected");
-		}
-
-		@Override
-		public void onConnectFailed() {
-			System.out.println("> onConnectFailed");
-		}
-
-		@Override
-		public void onStopped() {
-			System.out.println("> onStopped");
-		}
-	}
-
-	private static final class MessagePrinter implements MessageReceivedCallback {
-
-		@Override
-		public void messageReceived(SCAMPIMessage message, String service) {
-			try {
-				if (message.hasString("text")) {
-					System.out.println("> messageReceived: " + message.getString("text"));
-				}
-			} finally {
-				message.close();
-			}
-		}
 	}
 }
