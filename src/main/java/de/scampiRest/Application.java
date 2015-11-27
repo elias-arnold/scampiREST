@@ -1,7 +1,11 @@
 package de.scampiRest;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +17,15 @@ import de.scampiRest.applib.ScampiCommunicator;
 
 @SpringBootApplication
 public class Application extends WebMvcConfigurerAdapter {
+	
+	@Value("${multipart.location}")
+	private String tempFilePath;
+	
+	@Value("${scampi.publicStorage}")
+	private String storagePath;
     
+	private static final Logger logger = LoggerFactory.getLogger(Application.class);
+	
     public static void main(String[] args) {
         @SuppressWarnings("unused")
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
@@ -34,5 +46,31 @@ public class Application extends WebMvcConfigurerAdapter {
     @Bean
     public ScampiCommunicator scampiCommunicator(){
     	return new ScampiCommunicator();
+    }
+    
+    @Bean(name="tempFilePath")
+    public String tempFilePath(){
+    	try {
+			File path = new File(tempFilePath);
+			if (!path.exists()){
+				path.mkdir();
+			}
+		} catch (Exception e) {
+			logger.error(tempFilePath, e);
+		}
+    	return this.tempFilePath;
+    }
+    
+    @Bean(name="storagePath") 
+    public String storagePath(){
+    	try {
+			File path = new File(storagePath);
+			if (!path.exists()){
+				path.mkdir();
+			}
+		} catch (Exception e) {
+			logger.error(storagePath, e);
+		}
+    	return this.storagePath;
     }
 }
