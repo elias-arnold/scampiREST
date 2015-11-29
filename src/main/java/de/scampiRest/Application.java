@@ -23,6 +23,9 @@ public class Application extends WebMvcConfigurerAdapter {
 	
 	@Value("${scampi.publicStorage}")
 	private String storagePath;
+	
+	@Value("${scampi.mongoPath}")
+	private String mongoPath;
     
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 	
@@ -72,5 +75,17 @@ public class Application extends WebMvcConfigurerAdapter {
 			logger.error(storagePath, e);
 		}
     	return this.storagePath;
+    }
+    @Bean(name="mongoPath") 
+    public String mongoPath(){
+    	try {
+			File path = new File(mongoPath);
+			if (!path.exists()){
+				path.mkdir();
+			}
+		} catch (Exception e) {
+			logger.error(mongoPath, e);
+		}
+    	return this.mongoPath;
     }
 }

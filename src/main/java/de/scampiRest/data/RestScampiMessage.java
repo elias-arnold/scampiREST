@@ -8,6 +8,10 @@ import java.util.TreeMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import de.scampiRest.applib.ScampiCommunicator;
@@ -19,10 +23,14 @@ import fi.tkk.netlab.dtn.scampi.applib.impl.message.FloatContentType;
 import fi.tkk.netlab.dtn.scampi.applib.impl.message.IntegerContentType;
 import fi.tkk.netlab.dtn.scampi.applib.impl.message.UTF8ContentType;
 
+@Document
 public class RestScampiMessage {
 
-	@JsonIgnore private static final Logger logger = LoggerFactory.getLogger(RestScampiMessage.class);
-	@JsonIgnore private String storagePath;
+	@Transient @JsonIgnore private static final Logger logger = LoggerFactory.getLogger(RestScampiMessage.class);
+	@Transient @JsonIgnore private String storagePath;
+	
+	@Id
+	private String id;
 	
 	private String appTag = "";
 	private String service = "";
@@ -56,9 +64,9 @@ public class RestScampiMessage {
 					fileForBinary.mkdirs();
 					// fileForBinary = new File(getFullPath(contentType.name + ".zip"));
 					// fileForBinary.createNewFile();
-					message.moveBinary(contentType.name + ".zip", fileForBinary);
+// 					message.moveBinary(contentType.name + ".zip", fileForBinary);
 					binaryMap.put(contentType.name, getPath(contentType.name));
-				} catch (ApiException | IOException e) {
+				} catch (ApiException e) {
 					logger.error(getFullPath(contentType.name) + " not stored", e);
 					binaryMap.put(contentType.name, "");
 				}
@@ -106,6 +114,14 @@ public class RestScampiMessage {
 	
 	private String getFullPath(String name){
 		return this.storagePath + "/" + this.getPath(name);
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getAppTag() {

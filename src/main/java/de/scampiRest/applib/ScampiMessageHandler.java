@@ -15,6 +15,7 @@ class ScampiMessageHandler implements MessageReceivedCallback {
 			if (message.hasString("text")) {
 				logger.info("> messageReceived: " + message.getString("text"));
 			}
+			
 		} finally {
 			message.close();
 		}
