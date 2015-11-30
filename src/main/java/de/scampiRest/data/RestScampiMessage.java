@@ -1,10 +1,14 @@
 package de.scampiRest.data;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,15 +62,21 @@ public class RestScampiMessage {
 				// String
 				stringMap.put(contentType.name, ((UTF8ContentType) contentType).string);
 			} else if (contentType instanceof BufferContentType){
-				// BIN
-				File fileForBinary = new File(getFullPath(""));
+				// Binary handling
 				try {
+					// Make new directory
+					File fileForBinary = new File(getFullPath(""));
 					fileForBinary.mkdirs();
-					// fileForBinary = new File(getFullPath(contentType.name + ".zip"));
-					// fileForBinary.createNewFile();
-// 					message.moveBinary(contentType.name + ".zip", fileForBinary);
-					binaryMap.put(contentType.name, getPath(contentType.name));
-				} catch (ApiException e) {
+					// Make new file
+					FileOutputStream fileOut = new FileOutputStream(getFullPath(contentType.name));
+					// Write to output File
+					fileOut.write(((BufferContentType) contentType).buffer);
+					fileOut.close(); // close the file output
+					
+					extractZip(contentType.name);
+					
+					binaryMap.put(contentType.name, getPath(""));
+				} catch (ApiException | IOException e) {
 					logger.error(getFullPath(contentType.name) + " not stored", e);
 					binaryMap.put(contentType.name, "");
 				}
@@ -79,7 +89,6 @@ public class RestScampiMessage {
 				integerMap.put(contentType.name, ((IntegerContentType) contentType).value);
 			}
 		} // FOR
-		
 		metaData = message.getMetadata();
 	}
 	
@@ -109,12 +118,60 @@ public class RestScampiMessage {
 	}
 	
 	private String getPath(String name){
-		return this.getService() + "/" + this.getAppTag() + "/" + name;
+		// We interpret all binaries as zip files
+		if (name.isEmpty()){ // only the path is needed
+			return this.getService() + "/" + this.getAppTag() + "/";
+		} else { // we return the name with the extension
+			if (name.endsWith(".zip")){
+				return this.getService() + "/" + this.getAppTag() + "/" + name;
+			} else {
+				return this.getService() + "/" + this.getAppTag() + "/" + name + ".zip";
+			}
+		}
+		
 	}
 	
 	private String getFullPath(String name){
 		return this.storagePath + "/" + this.getPath(name);
 	}
+	
+	public void addNewBinary(File fileName, String name){
+		
+		File fileForBinary = new File(getFullPath(""));
+		fileForBinary.mkdirs(); // make necessary directories if not existing
+		
+		File fileOut = new File(getFullPath(name)); // Create new output file
+
+		fileName.renameTo(fileOut); // move the file
+		
+		extractZip(name); // extract the new file
+		binaryMap.put(name, getPath("")); // put the path as attribute
+	}
+	
+	private void extractZip(String name){
+		
+		byte[] buffer = new byte[1024];
+		//get the zip file content
+    	try {
+			ZipInputStream zis = new ZipInputStream(new FileInputStream(getFullPath(name)));
+			ZipEntry entry = zis.getNextEntry();
+			while (entry != null) {
+				FileOutputStream fos = new FileOutputStream(getFullPath(entry.getName())); 
+				
+				int len;
+	            while ((len = zis.read(buffer)) > 0) {
+	           		fos.write(buffer, 0, len);
+	                }
+	            fos.close();
+				entry = zis.getNextEntry();
+			}
+			
+		} catch (IOException e) {
+			logger.error("Error extracting zip file", e);
+		}
+		
+	}
+	
 	
 	public String getId() {
 		return id;

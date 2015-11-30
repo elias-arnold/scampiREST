@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import de.scampiRest.controller.ScampiController;
+import de.scampiRest.data.RestScampiMessage;
+import de.scampiRest.data.RestScampiMessageRepository;
 import fi.tkk.netlab.dtn.scampi.applib.*;
 
 /**
@@ -20,24 +22,16 @@ import fi.tkk.netlab.dtn.scampi.applib.*;
 public class ScampiCommunicator {
 	static private final AppLib APP_LIB = AppLib.builder().build();
 	private static final Logger logger = LoggerFactory.getLogger(ScampiCommunicator.class);
-	private final String wildcardSubscribe = "Hello Service"; 
+	private final static String wildcardSubscribe = "Hello Service"; 
 	@Autowired private String storagePath;
+	@Autowired private RestScampiMessageRepository restScampiMessageRepository;
 	private static ScampiCommunicator self;
 	
 	public ScampiCommunicator() {
-		try {
-			// Setup
-			APP_LIB.start();
-			APP_LIB.addLifecycleListener(new ScampiLifeCyclePrinter());
-			APP_LIB.connect();
-
-			// Subscribe to a service
-			APP_LIB.addMessageReceivedCallback(new ScampiMessageHandler());
-			APP_LIB.subscribe(wildcardSubscribe);
-
-		} catch (InterruptedException e) {
-			logger.error("Error establishing scampi",e);
-		}
+		// Setup
+		APP_LIB.start();
+		APP_LIB.addLifecycleListener(new ScampiLifeCyclePrinter());
+		tryReconnect();
 		self = this;
 	}
 
@@ -47,6 +41,10 @@ public class ScampiCommunicator {
 	
 	public void publish(SCAMPIMessage message, String service) throws InterruptedException{
 		APP_LIB.publish(message, service);
+	}
+	
+	public void saveInDatabase(RestScampiMessage restScampiMessage){
+		restScampiMessageRepository.insert(restScampiMessage);
 	}
 	
 	public static SCAMPIMessage getMessage(String version){
@@ -65,8 +63,18 @@ public class ScampiCommunicator {
 		return storagePath;
 	}
 	
-	
-	
-	
+	public static void tryReconnect(){
+		try {
+			// APP_LIB.addLifecycleListener(new ScampiLifeCyclePrinter());
+			APP_LIB.connect();
+
+			// Subscribe to all service
+			APP_LIB.addMessageReceivedCallback(new ScampiMessageHandler());
+			APP_LIB.subscribe(wildcardSubscribe);
+		} catch (InterruptedException e) {
+			logger.error("could not reconnect", e);
+		}
+	}
+
 	
 }

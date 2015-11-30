@@ -2,7 +2,10 @@ package de.scampiRest.applib;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import de.scampiRest.data.RestScampiMessage;
+import de.scampiRest.data.RestScampiMessageRepository;
 import fi.tkk.netlab.dtn.scampi.applib.MessageReceivedCallback;
 import fi.tkk.netlab.dtn.scampi.applib.SCAMPIMessage;
 
@@ -12,9 +15,9 @@ class ScampiMessageHandler implements MessageReceivedCallback {
 	@Override
 	public void messageReceived(SCAMPIMessage message, String service) {
 		try {
-			if (message.hasString("text")) {
-				logger.info("> messageReceived: " + message.getString("text"));
-			}
+			
+			RestScampiMessage restScampiMessage = new RestScampiMessage(message, service);
+			ScampiCommunicator.getSelf().saveInDatabase(restScampiMessage);
 			
 		} finally {
 			message.close();

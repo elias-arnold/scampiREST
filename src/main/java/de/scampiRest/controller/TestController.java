@@ -45,14 +45,14 @@ public class TestController {
 	}
 	
 	@RequestMapping(value = "/storeMongo")
-	public String storeNewMonog(){
+	public RestScampiMessage storeNewMonog(){
 		SCAMPIMessage message = ScampiCommunicator.getMessage("v1");
 		message.putString("Name", "MyValue i want to send");
 		message.putBinary("bin", new byte[1]);
 		message.putInteger("int", 1234);
 		message.putFloat("float", new Double(123123));
 		RestScampiMessage restMessage = new RestScampiMessage(message, "testservice");
-		return restScampiMessageRepository.insert(restMessage).toString();
+		return restScampiMessageRepository.insert(restMessage);
 	}
 
 }
