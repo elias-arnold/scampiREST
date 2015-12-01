@@ -18,6 +18,7 @@ import de.scampiRest.applib.ScampiCommunicator;
 import de.scampiRest.data.RestScampiMessage;
 import de.scampiRest.data.RestScampiMessageRepository;
 import de.scampiRest.exception.DatabaseIdInUse;
+import de.scampiRest.exception.NoMessageIdFound;
 
 @RestController
 public class ScampiController {
@@ -46,9 +47,14 @@ public class ScampiController {
 	}
 	
 	@RequestMapping(value = "/message/publish/{id}", method = RequestMethod.GET)
-	public String publishScampi(@PathVariable String id) throws InterruptedException{
+	public String publishScampi(@PathVariable String id) throws InterruptedException, NoMessageIdFound{
 		RestScampiMessage restScampiMessage = restScampiMessageRepository.findOne(id);
+		if (restScampiMessage == null){
+			throw new NoMessageIdFound();
+		}
 		scampiCommunicator.publish(restScampiMessage.writeSCAMPIMessage(), restScampiMessage.getService());
+		
+		// TODO How do we handle the answere of scampi?
 		return restScampiMessage.getId();
 	}
 	

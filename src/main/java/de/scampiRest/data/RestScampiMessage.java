@@ -51,6 +51,8 @@ public class RestScampiMessage {
 	}
 	
 	public RestScampiMessage( SCAMPIMessage message, String service) {
+		// TODO check if the message has a mongoid and if not create it. if it has. dont update. 
+		
 		Collection<ContentType> cont = message.getContent();
 		this.appTag = message.getAppTag();
 		this.service = service;
@@ -94,6 +96,8 @@ public class RestScampiMessage {
 	
 	public SCAMPIMessage writeSCAMPIMessage(){
 		SCAMPIMessage message = ScampiCommunicator.getMessage(getAppTag());
+		
+		// TODO Put the mongo database id to the message 
 		
 		for (String name : stringMap.keySet()) {
 			message.putString(name, stringMap.get(name));
