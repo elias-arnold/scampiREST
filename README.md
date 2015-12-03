@@ -3,33 +3,33 @@
 [![Build Status](https://drone.io/github.com/elias-arnold/scampiREST/status.png)](https://drone.io/github.com/elias-arnold/scampiREST/latest)
 
 
-<h1>Framework:</h1> 
+<h2>Framework:</h2> 
 http://www.liberouter.mobi/
 
 
-Design Diagrams:
+<h2>Design Diagrams:</h2>
 
-Built new Rest Message from Scampi: 
+<h3>Built new Rest Message from Scampi:</h3>
 https://creately.com/diagram/ihnap9eq3/rgxMpRw4AMT5vlVSxi9BLBzJU%3D
 
-Publish new Message to Scampi:
+<h3>Publish new Message to Scampi:</h3>
 https://creately.com/diagram/ihn6w04q/HC4OKwFY3QlDbjs2l2NNiN8k9iU%3D
 
-Request new Service from Scampi:
+<h3>Request new Service from Scampi:</h3>
 https://creately.com/diagram/ihm7ybd31/quPHInTgBHPyNNbzjHlpRcWDtAw%3D
 
 
 
-Curl Commands to test and interact with the API:
+<h2>Curl Commands to test and interact with the API:</h2>
 
-Request all Messages for a service:
+<h3>Request all Messages for a service:</h3>
 curl -H "Accept: application/json" http://localhost:8080/dyn/service/myservice
 
-Get a empty message:
+<h3>Get a empty message:</h3>
 curl -H "Accept: application/json" http://localhost:8080/dyn/message/empty
 
-Stage a new message: 
+<h3>Stage a new message:</h3>
 curl -X POST -H "Content-Type:application/json" http://localhost:8080/dyn/message/stage -d '{"id":null,"appTag":"","service":"myservice","stringMap":{"testKey":"testValue"},"integerMap":{},"floatMap":{},"binaryMap":{},"metaData":{}}'
 
-Pubish a staged message:
-curl -H "Accept: application/json" http://localhost:8080/dyn/message/publish/$myid
+<h3>Pubish a staged message:</h3>
+curl -H "Accept: application/json" http://localhost:8080/dyn/message/publish{newMessageId}
