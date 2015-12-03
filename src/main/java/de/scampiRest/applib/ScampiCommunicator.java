@@ -1,5 +1,16 @@
 package de.scampiRest.applib;
 
+import java.util.concurrent.TimeUnit;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import de.scampiRest.controller.ScampiController;
+import de.scampiRest.data.RestScampiMessage;
+import de.scampiRest.data.RestScampiMessageRepository;
 import fi.tkk.netlab.dtn.scampi.applib.*;
 
 /**
@@ -10,67 +21,60 @@ import fi.tkk.netlab.dtn.scampi.applib.*;
  */
 public class ScampiCommunicator {
 	static private final AppLib APP_LIB = AppLib.builder().build();
-
+	private static final Logger logger = LoggerFactory.getLogger(ScampiCommunicator.class);
+	private final static String wildcardSubscribe = "Hello Service"; 
+	@Autowired private String storagePath;
+	@Autowired private RestScampiMessageRepository restScampiMessageRepository;
+	private static ScampiCommunicator self;
+	
 	public ScampiCommunicator() {
-		try {
-			// Setup
-			APP_LIB.start();
-			APP_LIB.addLifecycleListener(new LifeCyclePrinter());
-			APP_LIB.connect();
-
-			// Subscribe to a service
-			APP_LIB.addMessageReceivedCallback(new MessagePrinter());
-			APP_LIB.subscribe("Hello Service");
-
-			// Publish a message
-			APP_LIB.publish(getMessage("Hello World!"), "Hello Service");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		// Setup
+		APP_LIB.start();
+		APP_LIB.addLifecycleListener(new ScampiLifeCyclePrinter());
+		tryReconnect();
+		self = this;
 	}
 
-	private static SCAMPIMessage getMessage(String text) {
-		SCAMPIMessage message = SCAMPIMessage.builder().appTag("Hello").build();
-		message.putString("text", text);
+	public void subscribe(String service) throws InterruptedException{
+		APP_LIB.subscribe(service);
+	}
+	
+	public void publish(SCAMPIMessage message, String service) throws InterruptedException{
+		APP_LIB.publish(message, service);
+	}
+	
+	public void saveInDatabase(RestScampiMessage restScampiMessage){
+		restScampiMessageRepository.insert(restScampiMessage);
+	}
+	
+	public static SCAMPIMessage getMessage(String version){
+		SCAMPIMessage message = SCAMPIMessage.builder()
+				.lifetime( 1, TimeUnit.DAYS )
+				.persistent( false ) 
+				.appTag( version ) .build();
 		return message;
 	}
 
-	private static final class LifeCyclePrinter implements AppLibLifecycleListener {
+	public static ScampiCommunicator getSelf() {
+		return self;
+	}
 
-		@Override
-		public void onConnected(String scampiId) {
-			System.out.println("> onConnected: " + scampiId);
-		}
+	public String getStoragePath() {
+		return storagePath;
+	}
+	
+	public static void tryReconnect(){
+		try {
+			// APP_LIB.addLifecycleListener(new ScampiLifeCyclePrinter());
+			APP_LIB.connect();
 
-		@Override
-		public void onDisconnected() {
-			System.out.println("> onDisconnected");
-		}
-
-		@Override
-		public void onConnectFailed() {
-			System.out.println("> onConnectFailed");
-		}
-
-		@Override
-		public void onStopped() {
-			System.out.println("> onStopped");
+			// Subscribe to all service
+			APP_LIB.addMessageReceivedCallback(new ScampiMessageHandler());
+			APP_LIB.subscribe(wildcardSubscribe);
+		} catch (InterruptedException e) {
+			logger.error("could not reconnect", e);
 		}
 	}
 
-	private static final class MessagePrinter implements MessageReceivedCallback {
-
-		@Override
-		public void messageReceived(SCAMPIMessage message, String service) {
-			try {
-				if (message.hasString("text")) {
-					System.out.println("> messageReceived: " + message.getString("text"));
-				}
-			} finally {
-				message.close();
-			}
-		}
-	}
+	
 }
