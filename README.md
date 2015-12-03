@@ -12,11 +12,12 @@ http://www.liberouter.mobi/
 This project is a using the Sping.io Boot framework. It has an embedded Tomcat Server included. Built the project utilizing maven with:
 ``` bash
 mvn clean package -Dmaven.test.skip=true
-```
+``` 
 And you will find your a runnable jar file under: ./target/
 with the name: scampiREST-1.0-SNAPSHOT.jar
 
 <h3>Run it with:</h3>
+
 ``` bash
 sudo -u www-data java -Xms56m -Xmx128m -XX:PermSize=56m -XX:MaxPermSize=128m -jar ./scampiREST-1.0-SNAPSHOT.jar
 ``` 
