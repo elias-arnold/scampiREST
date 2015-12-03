@@ -66,7 +66,7 @@ public class ScampiController {
 	
 	@RequestMapping(value = "/service/{serviceName}", method = RequestMethod.GET)
 	public List<RestScampiMessage> getScampi(@RequestParam(value="appTag", required=false) String appTag, @PathVariable String serviceName){
-		if (appTag != null){
+		if (appTag == null){
 			// Deliver all messages for a service
 			List<RestScampiMessage> restScampiMessages = restScampiMessageRepository.findByService(serviceName);
 			return restScampiMessages;
