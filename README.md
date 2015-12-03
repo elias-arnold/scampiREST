@@ -7,10 +7,9 @@
 http://www.liberouter.mobi/
 
 <h2>Run the Server:</h2>
-<p>
 <h3>Built from source:</h3>
 This project is a using the Sping.io Boot framework. It has an embedded Tomcat Server included. Built the project utilizing maven with:
-``` bash
+```bash
 mvn clean package -Dmaven.test.skip=true
 ``` 
 And you will find your a runnable jar file under: ./target/
@@ -18,7 +17,7 @@ with the name: scampiREST-1.0-SNAPSHOT.jar
 
 <h3>Run it with:</h3>
 
-``` bash
+```bash
 sudo -u www-data java -Xms56m -Xmx128m -XX:PermSize=56m -XX:MaxPermSize=128m -jar ./scampiREST-1.0-SNAPSHOT.jar
 ``` 
 www-data is a user. It is the same as the nginx user. You should not run the server as root!
@@ -31,7 +30,6 @@ The server is creating two folders und /var/tmp and should have write permission
 The logging is used to be under: 
 * /var/tmp/scampiRest
 For security reasons you might want to change the file spring.log which will be created only to write enabled with chmod 222 ./spring.log
-</p>
 
 <h2>Additional components requried:</h2>
 * Nginx (http://nginx.org/)
