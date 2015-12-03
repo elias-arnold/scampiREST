@@ -27,10 +27,14 @@ https://creately.com/diagram/ihm7ybd31/quPHInTgBHPyNNbzjHlpRcWDtAw%3D
 curl -H "Accept: application/json" http://localhost:8080/dyn/service/myservice
 ```
 <h3>Get a empty message:</h3>
+``` bash
 curl -H "Accept: application/json" http://localhost:8080/dyn/message/empty
-
+```
 <h3>Stage a new message:</h3>
+``` bash
 curl -X POST -H "Content-Type:application/json" http://localhost:8080/dyn/message/stage -d '{"id":null,"appTag":"","service":"myservice","stringMap":{"testKey":"testValue"},"integerMap":{},"floatMap":{},"binaryMap":{},"metaData":{}}'
-
+```
 <h3>Pubish a staged message:</h3>
+``` bash
 curl -H "Accept: application/json" http://localhost:8080/dyn/message/publish{newMessageId}
+```
