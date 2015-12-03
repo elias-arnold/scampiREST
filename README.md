@@ -23,8 +23,9 @@ https://creately.com/diagram/ihm7ybd31/quPHInTgBHPyNNbzjHlpRcWDtAw%3D
 <h2>Curl Commands to test and interact with the API:</h2>
 
 <h3>Request all Messages for a service:</h3>
+``` bash
 curl -H "Accept: application/json" http://localhost:8080/dyn/service/myservice
-
+```
 <h3>Get a empty message:</h3>
 curl -H "Accept: application/json" http://localhost:8080/dyn/message/empty
 
