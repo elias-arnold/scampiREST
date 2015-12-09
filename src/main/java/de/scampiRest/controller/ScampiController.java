@@ -3,6 +3,8 @@ package de.scampiRest.controller;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,10 +71,25 @@ public class ScampiController {
 	
 	@RequestMapping(value = "/service", method = RequestMethod.GET)
 	public List<ScampiService> getServices(){
+		TreeMap<String, ScampiService> services = new TreeMap<String, ScampiService>();
+		List<ScampiService> servicesList = new ArrayList<ScampiService>();
 		List<RestScampiMessage> restScampiMessages = restScampiMessageRepository.findAll();
 		
-		List<ScampiService> services = new ArrayList<ScampiService>();
+		for (RestScampiMessage restScampiMessage : restScampiMessages) {
+			if (!services.containsKey(restScampiMessage.getService())){
+				Integer messageCount = restScampiMessageRepository.findByService(restScampiMessage.getService()).size();
+				ScampiService scampiService = new ScampiService(restScampiMessage.getService(), 
+						"V1", "Default Description", messageCount);
+				services.put(restScampiMessage.getService(), scampiService);
+			}
+		}
 		
+		Set<String> keys = services.keySet();
+		for (String key : keys) {
+			servicesList.add(services.get(key));
+		}
+		
+		return servicesList;
 	}
 	
 	@RequestMapping(value = "/service/{serviceName}", method = RequestMethod.GET)

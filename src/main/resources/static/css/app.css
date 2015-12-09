@@ -8,4 +8,8 @@ h1 {
   font: 300% Helvetica, sans-serif;
   color: #151; }
 
+.service {
+  text-align: left;
+  border-style: solid; }
+
 /*# sourceMappingURL=app.css.map */
