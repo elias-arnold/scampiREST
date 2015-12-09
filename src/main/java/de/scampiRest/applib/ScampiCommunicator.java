@@ -25,6 +25,7 @@ public class ScampiCommunicator {
 	private final static String wildcardSubscribe = "Hello Service"; 
 	@Autowired private String storagePath;
 	@Autowired private RestScampiMessageRepository restScampiMessageRepository;
+	@Autowired private ScampiMessageHandler scampiMessageHandler;
 	private static ScampiCommunicator self;
 	
 	public ScampiCommunicator() {
@@ -44,7 +45,11 @@ public class ScampiCommunicator {
 	}
 	
 	public void saveInDatabase(RestScampiMessage restScampiMessage){
-		restScampiMessageRepository.insert(restScampiMessage);
+		
+		if (!restScampiMessageRepository.exists(restScampiMessage.getAppTag())){
+			restScampiMessageRepository.insert(restScampiMessage);
+		}
+		// restScampiMessageRepository.insert(restScampiMessage);
 	}
 	
 	public static SCAMPIMessage getMessage(String version){
@@ -63,13 +68,13 @@ public class ScampiCommunicator {
 		return storagePath;
 	}
 	
-	public static void tryReconnect(){
+	public void tryReconnect(){
 		try {
 			// APP_LIB.addLifecycleListener(new ScampiLifeCyclePrinter());
 			APP_LIB.connect();
 
 			// Subscribe to all service
-			APP_LIB.addMessageReceivedCallback(new ScampiMessageHandler());
+			APP_LIB.addMessageReceivedCallback(scampiMessageHandler);
 			APP_LIB.subscribe(wildcardSubscribe);
 		} catch (InterruptedException e) {
 			logger.error("could not reconnect", e);

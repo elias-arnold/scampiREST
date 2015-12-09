@@ -14,6 +14,7 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import de.scampiRest.applib.ScampiCommunicator;
+import de.scampiRest.applib.ScampiMessageHandler;
 
 @SpringBootApplication
 public class Application extends WebMvcConfigurerAdapter {
@@ -49,6 +50,11 @@ public class Application extends WebMvcConfigurerAdapter {
     @Bean
     public ScampiCommunicator scampiCommunicator(){
     	return new ScampiCommunicator();
+    }
+    
+    @Bean
+    public ScampiMessageHandler scampiMessageHandler(){
+    	return new ScampiMessageHandler();
     }
     
     @Bean(name="tempFilePath")

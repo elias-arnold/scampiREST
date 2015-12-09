@@ -21,7 +21,7 @@ class ScampiLifeCyclePrinter implements AppLibLifecycleListener {
 	public void onConnectFailed() {
 		restartCounter++;
 		if (restartCounter < 3){
-			ScampiCommunicator.tryReconnect();
+			ScampiCommunicator.getSelf().tryReconnect();
 		}
 		System.out.println("> onConnectFailed");
 	}

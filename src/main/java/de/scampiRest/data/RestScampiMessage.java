@@ -33,10 +33,10 @@ public class RestScampiMessage {
 	@Transient @JsonIgnore private static final Logger logger = LoggerFactory.getLogger(RestScampiMessage.class);
 	@Transient @JsonIgnore private String storagePath;
 	
+	// @Id
+	//private String id;
 	@Id
-	private String id;
-	
-	private String appTag = "";
+	private String appTag = null;
 	private String service = "";
 	
 	private TreeMap<String, String> stringMap = new TreeMap<String, String>();
@@ -95,7 +95,7 @@ public class RestScampiMessage {
 	}
 	
 	public SCAMPIMessage writeSCAMPIMessage(){
-		SCAMPIMessage message = ScampiCommunicator.getMessage(getAppTag());
+		SCAMPIMessage message = ScampiCommunicator.getMessage(String.valueOf(getAppTag()));
 		
 		// TODO Put the mongo database id to the message 
 		
@@ -177,13 +177,13 @@ public class RestScampiMessage {
 	}
 	
 	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
+//	public String getId() {
+//		return id;
+//	}
+//
+//	public void setId(String id) {
+//		this.id = id;
+//	}
 
 	public String getAppTag() {
 		return appTag;

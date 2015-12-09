@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import de.scampiRest.applib.ScampiCommunicator;
 import de.scampiRest.data.RestScampiMessage;
 import de.scampiRest.data.RestScampiMessageRepository;
+import de.scampiRest.data.ScampiService;
 import de.scampiRest.exception.DatabaseIdInUse;
 import de.scampiRest.exception.NoMessageIdFound;
 
@@ -28,7 +29,7 @@ public class ScampiController {
 	
 	@RequestMapping(value = "/")
 	public String welcomeMessage() {
-			return "Hello World";
+			return "Liberouter Rest Interface V0.1 alpha";
 	}
 	
 	@RequestMapping(value = "/message/empty", method = RequestMethod.GET)
@@ -39,11 +40,12 @@ public class ScampiController {
 	
 	@RequestMapping(value = "/message/stage", method = RequestMethod.POST)
 	public String stageScampi(@RequestBody RestScampiMessage restScampiMessage ) throws DatabaseIdInUse{
-		if (restScampiMessage.getId() != null){
+		if (restScampiMessage.getAppTag() != null){
 			throw new DatabaseIdInUse("The id is not null");
 		}
+		
 		restScampiMessage = restScampiMessageRepository.insert(restScampiMessage);
-		return restScampiMessage.getId();
+		return restScampiMessage.getAppTag();
 	}
 	
 	@RequestMapping(value = "/message/publish/{id}", method = RequestMethod.GET)
@@ -54,8 +56,9 @@ public class ScampiController {
 		}
 		scampiCommunicator.publish(restScampiMessage.writeSCAMPIMessage(), restScampiMessage.getService());
 		
+		
 		// TODO How do we handle the answere of scampi?
-		return restScampiMessage.getId();
+		return restScampiMessage.getAppTag();
 	}
 	
 	@RequestMapping(value = "/subscribe/{serviceName}", method = RequestMethod.GET)
@@ -64,15 +67,26 @@ public class ScampiController {
 		return "done";
 	}
 	
+	@RequestMapping(value = "/service", method = RequestMethod.GET)
+	public List<ScampiService> getServices(){
+		List<RestScampiMessage> restScampiMessages = restScampiMessageRepository.findAll();
+		
+		List<ScampiService> services = new ArrayList<ScampiService>();
+		
+	}
+	
 	@RequestMapping(value = "/service/{serviceName}", method = RequestMethod.GET)
-	public List<RestScampiMessage> getScampi(@RequestParam(value="appTag", required=false) String appTag, @PathVariable String serviceName){
+	public List<RestScampiMessage> getServiceMessages(@RequestParam(value="appTag", required=false) String appTag, @PathVariable String serviceName){
 		if (appTag == null){
 			// Deliver all messages for a service
 			List<RestScampiMessage> restScampiMessages = restScampiMessageRepository.findByService(serviceName);
 			return restScampiMessages;
 		} else {
 			// Deliver only messages for a service with a given apptag
-			List<RestScampiMessage> restScampiMessages = restScampiMessageRepository.findByService(serviceName);
+			
+			List<RestScampiMessage> restScampiMessages = restScampiMessageRepository.findByAppTag(appTag);
+			
+			/*List<RestScampiMessage> restScampiMessages = restScampiMessageRepository.findByService(serviceName);
 			List<RestScampiMessage> filteredRestScampiMessages = new ArrayList<RestScampiMessage>();
 			
 			for (Iterator<RestScampiMessage> iterator = restScampiMessages.iterator(); iterator.hasNext();) {
@@ -80,9 +94,9 @@ public class ScampiController {
 				if (restScampiMessage.getAppTag().contentEquals(appTag)){
 					filteredRestScampiMessages.add(restScampiMessage);
 				}
-			}
+			}*/
 			
-			return filteredRestScampiMessages;
+			return restScampiMessages;
 		}
 		
 	}
