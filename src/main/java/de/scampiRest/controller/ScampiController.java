@@ -1,10 +1,13 @@
 package de.scampiRest.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -116,6 +119,24 @@ public class ScampiController {
 			return restScampiMessages;
 		}
 		
+	}
+	
+	@RequestMapping(value = "/service/{serviceName}/random", method = RequestMethod.GET)
+	public List<RestScampiMessage> getServiceMessagesRandom(@PathVariable String serviceName, HttpServletResponse response) throws IOException{
+			// Deliver all messages for a service
+			List<RestScampiMessage> restScampiMessages = restScampiMessageRepository.findByService(serviceName);
+			
+			// Make it random... 
+			
+			RestScampiMessage restScampiMessage = restScampiMessages.get(0);
+			
+			response.sendRedirect("http://localhost:8888/" 
+				+ restScampiMessage.getService() 
+				+ "/" 
+				+ restScampiMessage.getAppTag() 
+				+ "/index.html");
+			
+			return restScampiMessages;
 	}
 
 }

@@ -24,7 +24,7 @@ app.controller('loaderCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.helloText = "Hello World";
 	
 	$scope.messages = {};
-	$scope.getMessages = function (){
+	$scope.getServices = function (){
 		var request = {
 	            method:  'GET',
 	            url:     restUrl + 'service',
@@ -37,7 +37,12 @@ app.controller('loaderCtrl', ['$scope', '$http', function($scope, $http) {
             console.log(data);
         });
 	}
-	$scope.getMessages();
+	$scope.getServices();
+	
+	
+	$scope.getPathForService = function(serviceName){
+		return restUrl + "service/" + serviceName + "/random"
+	}
 	
 }]);
 

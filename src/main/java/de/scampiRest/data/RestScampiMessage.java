@@ -51,7 +51,6 @@ public class RestScampiMessage {
 	}
 	
 	public RestScampiMessage( SCAMPIMessage message, String service) {
-		// TODO check if the message has a mongoid and if not create it. if it has. dont update. 
 		
 		Collection<ContentType> cont = message.getContent();
 		this.appTag = message.getAppTag();
@@ -75,7 +74,7 @@ public class RestScampiMessage {
 					fileOut.write(((BufferContentType) contentType).buffer);
 					fileOut.close(); // close the file output
 					
-					extractZip(contentType.name);
+					UnZip.unZipIt(getFullPath(contentType.name), getFullPath("")); // extract the new file
 					
 					binaryMap.put(contentType.name, getPath(""));
 				} catch (ApiException | IOException e) {
@@ -95,9 +94,7 @@ public class RestScampiMessage {
 	}
 	
 	public SCAMPIMessage writeSCAMPIMessage(){
-		SCAMPIMessage message = ScampiCommunicator.getMessage(String.valueOf(getAppTag()));
-		
-		// TODO Put the mongo database id to the message 
+		SCAMPIMessage message = ScampiCommunicator.getMessage(String.valueOf(getAppTag())); 
 		
 		for (String name : stringMap.keySet()) {
 			message.putString(name, stringMap.get(name));
@@ -148,32 +145,8 @@ public class RestScampiMessage {
 
 		fileName.renameTo(fileOut); // move the file
 		
-		extractZip(name); // extract the new file
+		UnZip.unZipIt(getFullPath(name), getFullPath("")); // extract the new file
 		binaryMap.put(name, getPath("")); // put the path as attribute
-	}
-	
-	private void extractZip(String name){
-		
-		byte[] buffer = new byte[1024];
-		//get the zip file content
-    	try {
-			ZipInputStream zis = new ZipInputStream(new FileInputStream(getFullPath(name)));
-			ZipEntry entry = zis.getNextEntry();
-			while (entry != null) {
-				FileOutputStream fos = new FileOutputStream(getFullPath(entry.getName())); 
-				
-				int len;
-	            while ((len = zis.read(buffer)) > 0) {
-	           		fos.write(buffer, 0, len);
-	                }
-	            fos.close();
-				entry = zis.getNextEntry();
-			}
-			
-		} catch (IOException e) {
-			logger.error("Error extracting zip file", e);
-		}
-		
 	}
 	
 	

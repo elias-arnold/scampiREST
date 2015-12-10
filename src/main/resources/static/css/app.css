@@ -10,6 +10,8 @@ h1 {
 
 .service {
   text-align: left;
-  border-style: solid; }
+  border: 1px solid #323836;
+  padding: 1em;
+  margin: 1em; }
 
 /*# sourceMappingURL=app.css.map */
