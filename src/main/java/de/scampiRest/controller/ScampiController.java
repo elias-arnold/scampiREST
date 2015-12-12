@@ -130,7 +130,7 @@ public class ScampiController {
 			
 			RestScampiMessage restScampiMessage = restScampiMessages.get(0);
 			
-			response.sendRedirect("http://localhost:8888/" 
+			response.sendRedirect("http://localhost/" 
 				+ restScampiMessage.getService() 
 				+ "/" 
 				+ restScampiMessage.getAppTag() 

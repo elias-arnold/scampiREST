@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/MsgViewBackgroundColor"
+              android:baselineAligned="false">
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:text="#Tag"
+            android:id="@+id/TagTitle"
+            android:background="@color/MsgViewTitleBannerColor"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="@color/MsgViewTitleTextColor"
+            android:textSize="20dp"
+            android:typeface="sans"
+            android:layout_marginBottom="5dp"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:baselineAligned="false"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/linearLayout2">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+            <FrameLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/tag_list_button_icon_bg">
+
+                <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView2"
+                        android:src="@drawable/send_icon"
+                        android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:text="Post"
+                    android:id="@+id/MsgListPostButton"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/tag_list_button_style"
+                    android:textSize="20dp"
+                    android:clickable="false"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/linearLayout1">
+
+            <FrameLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/tag_list_button_icon_bg">
+
+                <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView2"
+                        android:src="@drawable/sort_icon"
+                        android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:text="Sort"
+                    android:id="@+id/MsgListSortButton"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/tag_list_button_style"
+                    android:textSize="20dp"
+                    android:clickable="false"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="6dp"
+            android:background="@drawable/msg_list_top_spacer"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp">
+    </FrameLayout>
+
+    <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/MessageList"
+            android:divider="@color/MsgViewBackgroundColor"
+            android:dividerHeight="1dp"
+            android:drawSelectorOnTop="false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:smoothScrollbar="true"
+            android:choiceMode="none"
+            android:clickable="false"
+            android:background="@color/MsgViewForegroundColor"
+
+            android:fadingEdgeLength="0dp"
+            android:overScrollMode="never"
+            />
+
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="6dp"
+            android:background="@drawable/msg_list_bottom_spacer"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+    </FrameLayout>
+
+</LinearLayout>

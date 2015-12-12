@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/TagListSendButtonDark">
+
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageView"
+                android:adjustViewBounds="true"
+                android:src="@drawable/send_icon"
+                android:layout_gravity="center"
+                android:background="@color/TagListSendButtonDark"
+                android:clickable="false"
+                android:cropToPadding="false"
+                android:focusable="false"
+                android:scaleType="fitCenter"
+                />
+    </FrameLayout>
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:text="Send"
+            android:id="@+id/textView"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/TagListSendButtonLight"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+</LinearLayout>

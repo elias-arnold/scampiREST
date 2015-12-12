@@ -1,4 +1,4 @@
-var restUrl = "http://localhost:8080/dyn/";
+var restUrl = "http://localhost/dyn/";
 
 var app = angular.module('scampiREST', [
     'ngRoute'

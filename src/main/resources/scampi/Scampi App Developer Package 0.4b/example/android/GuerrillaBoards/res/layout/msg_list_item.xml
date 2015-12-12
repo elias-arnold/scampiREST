@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:minHeight="65dp"
+                android:background="@drawable/msgrowselector"
+                android:clickable="false">
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem Ipsum"
+            android:id="@+id/MsgText"
+            android:layout_alignParentLeft="false"
+            android:textColor="@color/MsgViewTextColor"
+            android:textSize="13dp"
+            android:paddingLeft="2dp"
+            android:layout_below="@+id/TimeText"
+            android:typeface="monospace"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.5.2013 13:42"
+            android:id="@+id/TimeText"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/MsgViewTextColor"
+            android:textSize="10dp"
+            android:paddingBottom="5dp"
+            />
+</RelativeLayout>

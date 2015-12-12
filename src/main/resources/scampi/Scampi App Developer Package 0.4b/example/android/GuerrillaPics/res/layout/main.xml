@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#ffffff">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:text="Guerrilla Pics"
+                android:background="@color/MainViewTitleBannerColor"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/MainViewTitleTextColor"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:id="@+id/textView"/>
+
+        <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/publishButton"
+                android:src="@drawable/send_icon"
+                android:background="@drawable/publish_button"
+                android:adjustViewBounds="false"
+                android:layout_alignRight="@+id/textView"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:baselineAlignBottom="false"/>
+    </RelativeLayout>
+
+    <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/mainListView"/>
+</LinearLayout>
+
