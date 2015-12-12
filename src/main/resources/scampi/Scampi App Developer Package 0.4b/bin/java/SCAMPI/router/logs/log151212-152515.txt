@@ -240,3 +240,14 @@ ived.zip'.
 2015-12-12 16:01:38.333: <DEBUG>   [APIClientSenderThread] Sending task
 2015-12-12 16:02:08.332: <DEBUG>   [APIClientSenderThread] Sending task
 2015-12-12 16:02:38.332: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:03:08.332: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:03:38.332: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:04:08.333: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:04:38.333: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:05:08.332: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:05:38.332: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:06:08.332: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:06:38.333: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:07:08.333: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:07:38.332: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-12 16:08:08.332: <DEBUG>   [APIClientSenderThread] Sending task
