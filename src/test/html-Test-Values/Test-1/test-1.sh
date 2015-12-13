@@ -10,5 +10,9 @@ echo -e "\nupload sucessfull"
 echo -e "\npublish the message"
 curl -H "Accept: application/json" http://localhost/dyn/message/publish/$myid
 echo -e "\npublish sucessful"
-# curl -H "Accept: application/json" http://localhost/dyn/service/myservice
-# curl -H "Accept: application/json" http://localhost/dyn/subscribe/myservice
+
+curl -H "Accept: application/json" http://localhost/dyn/subscribe/myservice
+
+echo -e "\nget service"
+curl -H "Accept: application/json" http://localhost/dyn/service/myservice
+

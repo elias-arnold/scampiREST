@@ -1546,3 +1546,186 @@ ived.zip'.
 2015-12-13 10:14:29.194: <DEBUG>   [APIClientSenderThread] Sending task
 2015-12-13 10:14:59.193: <DEBUG>   [APIClientSenderThread] Sending task
 2015-12-13 10:15:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:15:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:16:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:16:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:17:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:17:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:18:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:18:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:19:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:19:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:20:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:20:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:21:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:21:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:22:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:22:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:23:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:23:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:24:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:24:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:25:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:25:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:26:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:26:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:27:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:27:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:28:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:28:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:29:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:29:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:30:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:30:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:31:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:31:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:32:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:32:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:33:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:33:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:34:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:34:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:35:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:35:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:36:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:36:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:37:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:37:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:38:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:38:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:39:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:39:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:40:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:40:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:41:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:41:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:42:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:42:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:43:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:43:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:44:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:44:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:45:29.208: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:45:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:46:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:46:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:47:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:47:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:48:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:48:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:49:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:49:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:50:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:50:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:51:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:51:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:52:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:52:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:53:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:53:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:54:29.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:54:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:55:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:55:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 10:56:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:29.107: <DEBUG>   [Core] Processing event (InterfaceLostEvent)
+2015-12-13 11:20:29.107: <VERBOSE> [InterfaceLostEvent] Interface lost: ipv4interface: IPv4CommunicationInterface 10.0.0.3
+2015-12-13 11:20:29.108: <VERBOSE> [TCPCLBundleService] Stopping TCPCLBundleService. (TCPCL Server, port: 7895, if: 10.0.0.3.).
+2015-12-13 11:20:29.108: <DEBUG>   [TcpJsonMonitor] Stopping (10.0.0.3:14141)
+2015-12-13 11:20:29.108: <DEBUG>   [TcpJsonMonitor] Server stopped.
+2015-12-13 11:20:29.108: <DEBUG>   [Core] InterfaceLostEvent took 0.900017 ms
+2015-12-13 11:20:29.108: <DEBUG>   [Core] Processing event (MonitorRemovedEvent)
+2015-12-13 11:20:29.108: <DEBUG>   [MonitorRemovedEvent] Monitor added (TcpJsonMonitor: 10.0.0.3:14141, clients: 0)
+2015-12-13 11:20:29.108: <DEBUG>   [Core] MonitorRemovedEvent took 0.035434 ms
+2015-12-13 11:20:29.957: <VERBOSE> [TCPCLBundleService] Bundle service shut down (TCPCL Server, port: 7895, if: 10.0.0.3.).
+2015-12-13 11:20:29.959: <DEBUG>   [Core] Processing event (AnnouncerShutdownEvent)
+2015-12-13 11:20:29.959: <VERBOSE> [IPv4CommunicationInterface] Interface 'fi.tkk.netlab.dtn.scampi.comms.interfaces.BaseCommunicationInterface$3@4620db2c' fully stopped.
+2015-12-13 11:20:29.959: <DEBUG>   [Core] AnnouncerShutdownEvent took 0.017054 ms
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.842: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:30.843: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:20:34.109: <DEBUG>   [Core] Processing event (InterfaceFoundEvent)
+2015-12-13 11:20:34.109: <VERBOSE> [InterfaceFoundEvent] New interface found: ipv4interface: IPv4CommunicationInterface 10.0.0.3
+2015-12-13 11:20:34.109: <VERBOSE> [PassiveAnnouncer] Listening on 10.0.0.3 port 1234.
+2015-12-13 11:20:34.109: <VERBOSE> [TCPCLBundleService] Starting TCPCLBundleService on port 7895 on 10.0.0.3.
+2015-12-13 11:20:34.111: <DEBUG>   [] Created ServerSocket: port = 1234, bind_if = /10.0.0.3
+2015-12-13 11:20:34.111: <DEBUG>   [] Created ServerSocket: port = 7895, bind_if = /10.0.0.3
+2015-12-13 11:20:34.111: <DEBUG>   [TcpJsonMonitor] Starting (10.0.0.3:14141)
+2015-12-13 11:20:34.115: <DEBUG>   [Core] InterfaceFoundEvent took 6.47723 ms
+2015-12-13 11:20:34.116: <DEBUG>   [Core] Processing event (MonitorAddedEvent)
+2015-12-13 11:20:34.116: <DEBUG>   [MonitorAddedEvent] Monitor added (TcpJsonMonitor: 10.0.0.3:14141, clients: 0)
+2015-12-13 11:20:34.116: <DEBUG>   [Core] MonitorAddedEvent took 0.069588 ms
+2015-12-13 11:20:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:21:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:21:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:22:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:22:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:23:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:23:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:24:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:24:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:25:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:25:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:26:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:26:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:27:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:27:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:28:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:28:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:29:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:29:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:30:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:30:59.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:31:29.193: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:31:59.194: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-13 11:32:06.693: <NORMAL>  [APIClientHandler] End of stream.
+2015-12-13 11:32:06.718: <DEBUG>   [ServLib] Removed client handler.
+2015-12-13 11:32:06.718: <DEBUG>   [Core] Processing event (APIClientDisconnectedEvent)
+2015-12-13 11:32:06.718: <DEBUG>   [Core] Removed seeker for service 'Hello Service'.
+2015-12-13 11:32:06.718: <DEBUG>   [Core] Removed seeker for service 'myservice'.
+2015-12-13 11:32:06.718: <DEBUG>   [Core] APIClientDisconnectedEvent took 0.039994 ms
