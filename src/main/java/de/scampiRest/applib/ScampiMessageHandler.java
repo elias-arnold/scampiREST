@@ -12,12 +12,10 @@ import fi.tkk.netlab.dtn.scampi.applib.SCAMPIMessage;
 public class ScampiMessageHandler implements MessageReceivedCallback {
 	private static final Logger logger = LoggerFactory.getLogger(ScampiMessageHandler.class);
 	
-	@Autowired private RestScampiMessageRepository restScampiMessageRepository;
-	
 	@Override
 	public void messageReceived(SCAMPIMessage message, String service) {
 		try {
-			if (!restScampiMessageRepository.exists(message.getAppTag())){
+			if (!ScampiCommunicator.getSelf().getRestScampiMessageRepository().exists(message.getAppTag())){
 				RestScampiMessage restScampiMessage = new RestScampiMessage(message, service);
 				ScampiCommunicator.getSelf().saveInDatabase(restScampiMessage);
 			}

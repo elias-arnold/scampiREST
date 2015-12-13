@@ -10,6 +10,7 @@ import java.util.TreeMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.Id;
@@ -21,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import de.scampiRest.applib.ScampiCommunicator;
 import fi.tkk.netlab.dtn.scampi.applib.ApiException;
 import fi.tkk.netlab.dtn.scampi.applib.SCAMPIMessage;
+import fi.tkk.netlab.dtn.scampi.applib.impl.message.BinaryContentType;
 import fi.tkk.netlab.dtn.scampi.applib.impl.message.BufferContentType;
 import fi.tkk.netlab.dtn.scampi.applib.impl.message.ContentType;
 import fi.tkk.netlab.dtn.scampi.applib.impl.message.FloatContentType;
@@ -62,7 +64,7 @@ public class RestScampiMessage {
 			if (contentType instanceof UTF8ContentType){
 				// String
 				stringMap.put(contentType.name, ((UTF8ContentType) contentType).string);
-			} else if (contentType instanceof BufferContentType){
+			} else if (contentType instanceof BinaryContentType){
 				// Binary handling
 				try {
 					// Make new directory
@@ -71,7 +73,8 @@ public class RestScampiMessage {
 					// Make new file
 					FileOutputStream fileOut = new FileOutputStream(getFullPath(contentType.name));
 					// Write to output File
-					fileOut.write(((BufferContentType) contentType).buffer);
+					org.apache.tomcat.util.http.fileupload.IOUtils.copy(((BinaryContentType) contentType).getContentStream(), fileOut);
+					// fileOut.write(((BinaryContentType) contentType));
 					fileOut.close(); // close the file output
 					
 					UnZip.unZipIt(getFullPath(contentType.name), getFullPath("")); // extract the new file

@@ -3,3 +3,5 @@ myid=$(curl -X POST -H "Content-Type:application/json" http://localhost/dyn/mess
 curl -H "Accept: application/json" http://localhost/dyn/message/publish/$myid
 curl -H "Accept: application/json" http://localhost/dyn/service/myservice
 curl -H "Accept: application/json" http://localhost/dyn/subscribe/myservice
+
+curl -v -F name=somename -F upload=@"./" URL

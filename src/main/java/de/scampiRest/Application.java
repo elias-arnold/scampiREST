@@ -28,6 +28,8 @@ public class Application extends WebMvcConfigurerAdapter {
 	@Value("${scampi.mongoPath}")
 	private String mongoPath;
     
+	private ScampiMessageHandler messageHandler;
+	
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 	
     public static void main(String[] args) {
@@ -46,17 +48,7 @@ public class Application extends WebMvcConfigurerAdapter {
 		om.failOnUnknownProperties(false);
 		return om;
 	}
-    
-    @Bean
-    public ScampiCommunicator scampiCommunicator(){
-    	return new ScampiCommunicator();
-    }
-    
-    @Bean
-    public ScampiMessageHandler scampiMessageHandler(){
-    	return new ScampiMessageHandler();
-    }
-    
+
     @Bean(name="tempFilePath")
     public String tempFilePath(){
     	try {
@@ -94,4 +86,17 @@ public class Application extends WebMvcConfigurerAdapter {
 		}
     	return this.mongoPath;
     }
+    
+    @Bean
+    public ScampiMessageHandler scampiMessageHandler(){
+    	messageHandler = new ScampiMessageHandler();
+    	return messageHandler;
+    }
+
+    
+    @Bean
+    public ScampiCommunicator scampiCommunicator(){
+    	return new ScampiCommunicator();
+    }
+    
 }

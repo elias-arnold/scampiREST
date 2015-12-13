@@ -5,6 +5,9 @@ import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -19,6 +22,7 @@ import fi.tkk.netlab.dtn.scampi.applib.*;
  *
  * @author Elias Arnold
  */
+@DependsOn("scampiMessageHandler")
 public class ScampiCommunicator {
 	static private final AppLib APP_LIB = AppLib.builder().build();
 	private static final Logger logger = LoggerFactory.getLogger(ScampiCommunicator.class);
@@ -27,6 +31,7 @@ public class ScampiCommunicator {
 	@Autowired private RestScampiMessageRepository restScampiMessageRepository;
 	@Autowired private ScampiMessageHandler scampiMessageHandler;
 	private static ScampiCommunicator self;
+	
 	
 	public ScampiCommunicator() {
 		// Setup
@@ -74,11 +79,23 @@ public class ScampiCommunicator {
 			APP_LIB.connect();
 
 			// Subscribe to all service
-			APP_LIB.addMessageReceivedCallback(scampiMessageHandler);
+			if (scampiMessageHandler == null){
+				APP_LIB.addMessageReceivedCallback(new ScampiMessageHandler());
+			} else {
+				APP_LIB.addMessageReceivedCallback(scampiMessageHandler);
+			}
 			APP_LIB.subscribe(wildcardSubscribe);
 		} catch (InterruptedException e) {
 			logger.error("could not reconnect", e);
 		}
+	}
+
+	public void setScampiMessageHandler() {
+		APP_LIB.addMessageReceivedCallback(scampiMessageHandler);
+	}
+	
+	public RestScampiMessageRepository getRestScampiMessageRepository(){
+		return this.restScampiMessageRepository;
 	}
 
 	
