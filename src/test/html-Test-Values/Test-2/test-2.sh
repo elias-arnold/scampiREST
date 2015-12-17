@@ -4,7 +4,7 @@ myid=$(curl -X POST -H "Content-Type:application/json" http://localhost/dyn/mess
 echo -e "\n\n\n$myid\n\n\n"
 
 echo -e "\nupload a index zip"
-curl -v -F name="somename" -F id="$myid" -F file=@"./index.html.zip" http://localhost/dyn/upload
+curl -v -F name="somename" -F id="$myid" -F file=@"./scampiRest-picture-demo.zip" http://localhost/dyn/upload
 
 echo -e "\nupload sucessfull"
 echo -e "\npublish the message"

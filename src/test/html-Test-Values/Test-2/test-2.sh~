@@ -1,5 +1,5 @@
 echo -e "\nstage empty message"
-myid=$(curl -X POST -H "Content-Type:application/json" http://localhost/dyn/message/stage -d '{"appTag":null,"service":"myservice","stringMap":{"testKey":"testValue"},"integerMap":{"testIntKey":1},"floatMap":{},"binaryMap":{},"metaData":{}}')
+myid=$(curl -X POST -H "Content-Type:application/json" http://localhost/dyn/message/stage -d '{"appTag":null,"service":"test2app","stringMap":{"testKey":"testValue"},"integerMap":{"testIntKey":1},"floatMap":{},"binaryMap":{},"metaData":{}}')
 
 echo -e "\n\n\n$myid\n\n\n"
 
