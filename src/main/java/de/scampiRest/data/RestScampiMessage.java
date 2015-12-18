@@ -77,7 +77,7 @@ public class RestScampiMessage {
 					// fileOut.write(((BinaryContentType) contentType));
 					fileOut.close(); // close the file output
 					
-					UnZip.unZipIt(getFullPath(contentType.name), getFullPath("")); // extract the new file
+					zipManager.unZipIt(getFullPath(contentType.name), getFullPath("")); // extract the new file
 					
 					binaryMap.put(contentType.name, getPath(""));
 				} catch (ApiException | IOException e) {
@@ -148,7 +148,7 @@ public class RestScampiMessage {
 
 		fileName.renameTo(fileOut); // move the file
 		
-		UnZip.unZipIt(getFullPath(name), getFullPath("")); // extract the new file
+		zipManager.unZipIt(getFullPath(name), getFullPath("")); // extract the new file
 		binaryMap.put(name, getPath("")); // put the path as attribute
 	}
 	

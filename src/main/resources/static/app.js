@@ -20,7 +20,7 @@ app.controller('appController', ['$scope', function($scope) {
 	$scope.welcomeText = "Scampi Restinterface Loader";
 }]);
 
-app.controller('loaderCtrl', ['$scope', '$http', function($scope, $http) {
+app.controller('loaderCtrl', ['$scope', '$http','$window', function($scope, $http, $window) {
 	$scope.helloText = "Hello World";
 	
 	$scope.messages = {};
@@ -40,8 +40,13 @@ app.controller('loaderCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.getServices();
 	
 	
-	$scope.getPathForService = function(serviceName){
-		return restUrl + "service/" + serviceName + "/random"
+	$scope.getPathForService = function(message){
+		var serviceName = message.name;
+		if (message.currentId != undefined) {
+			$window.location.href = restUrl + "service/" + serviceName + "/" + message.currentId;
+		} else {
+			$window.location.href = restUrl + "service/" + serviceName + "/random";
+		}
 	}
 	
 }]);

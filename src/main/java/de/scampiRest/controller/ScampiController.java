@@ -138,5 +138,25 @@ public class ScampiController {
 			
 			return restScampiMessages;
 	}
+	
+	@RequestMapping(value = "/service/{serviceName}/{number}", method = RequestMethod.GET)
+	public List<RestScampiMessage> getServiceMessagesNumver(@PathVariable String serviceName, @PathVariable Integer number, HttpServletResponse response) throws IOException{
+			// Deliver all messages for a service
+			List<RestScampiMessage> restScampiMessages = restScampiMessageRepository.findByService(serviceName);
+			
+			// Make it random... 
+			if (restScampiMessages.size() <= number || number < 0) {
+				throw new IllegalArgumentException("index is not available");
+			}
+			RestScampiMessage restScampiMessage = restScampiMessages.get(number);
+			
+			response.sendRedirect("http://localhost/" 
+				+ restScampiMessage.getService() 
+				+ "/" 
+				+ restScampiMessage.getAppTag() 
+				+ "/index.html");
+			
+			return restScampiMessages;
+	}
 
 }
