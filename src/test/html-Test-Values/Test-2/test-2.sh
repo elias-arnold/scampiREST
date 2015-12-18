@@ -11,8 +11,8 @@ echo -e "\npublish the message"
 curl -H "Accept: application/json" http://localhost/dyn/message/publish/$myid
 echo -e "\npublish sucessful"
 
-curl -H "Accept: application/json" http://localhost/dyn/subscribe/myservice
+curl -H "Accept: application/json" http://localhost/dyn/subscribe/test2app
 
 echo -e "\nget service"
-curl -H "Accept: application/json" http://localhost/dyn/service/myservice
+curl -H "Accept: application/json" http://localhost/dyn/service/test2app
 
