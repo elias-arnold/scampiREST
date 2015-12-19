@@ -49,11 +49,12 @@
         
         <!--  AppLib Scampi -->
         <dependency>
-		    <groupId>applib</groupId>
-		    <artifactId>de.applib</artifactId>
+		    <groupId>fi.tkk.netlab.dtn.scampi</groupId>
+		    <artifactId>applib</artifactId>
 		    <version>1.0</version>
-		    <scope>system</scope>
+		    <!-- <scope>system</scope>
 		    <systemPath>${project.basedir}/lib/AppLib-1.0.jar</systemPath>
+		     -->
 		</dependency>
 		
 		<!-- Tests -->

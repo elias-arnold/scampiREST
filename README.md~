@@ -8,10 +8,6 @@ http://www.liberouter.mobi/
 
 <h2>Run the Server:</h2>
 <h3>Built from source:</h3>
-Make sure you added the applib jar to your local repository:
-```bash
-mvn install:install-file -Dfile=./lib/AppLib-1.0.jar -DgroupId=fi.tkk.netlab.dtn.scampi -DartifactId=applib -Dversion=1.0 -Dpackaging=jar
-```
 This project is a using the Sping.io Boot framework. It has an embedded Tomcat Server included. Built the project utilizing maven with:
 ```bash
 mvn clean package -Dmaven.test.skip=true
