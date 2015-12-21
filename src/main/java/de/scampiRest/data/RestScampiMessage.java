@@ -10,6 +10,7 @@ import java.util.TreeMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.Id;
@@ -21,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import de.scampiRest.applib.ScampiCommunicator;
 import fi.tkk.netlab.dtn.scampi.applib.ApiException;
 import fi.tkk.netlab.dtn.scampi.applib.SCAMPIMessage;
+import fi.tkk.netlab.dtn.scampi.applib.impl.message.BinaryContentType;
 import fi.tkk.netlab.dtn.scampi.applib.impl.message.BufferContentType;
 import fi.tkk.netlab.dtn.scampi.applib.impl.message.ContentType;
 import fi.tkk.netlab.dtn.scampi.applib.impl.message.FloatContentType;
@@ -33,10 +35,10 @@ public class RestScampiMessage {
 	@Transient @JsonIgnore private static final Logger logger = LoggerFactory.getLogger(RestScampiMessage.class);
 	@Transient @JsonIgnore private String storagePath;
 	
+	// @Id
+	//private String id;
 	@Id
-	private String id;
-	
-	private String appTag = "";
+	private String appTag = null;
 	private String service = "";
 	
 	private TreeMap<String, String> stringMap = new TreeMap<String, String>();
@@ -51,7 +53,6 @@ public class RestScampiMessage {
 	}
 	
 	public RestScampiMessage( SCAMPIMessage message, String service) {
-		// TODO check if the message has a mongoid and if not create it. if it has. dont update. 
 		
 		Collection<ContentType> cont = message.getContent();
 		this.appTag = message.getAppTag();
@@ -63,7 +64,7 @@ public class RestScampiMessage {
 			if (contentType instanceof UTF8ContentType){
 				// String
 				stringMap.put(contentType.name, ((UTF8ContentType) contentType).string);
-			} else if (contentType instanceof BufferContentType){
+			} else if (contentType instanceof BinaryContentType){
 				// Binary handling
 				try {
 					// Make new directory
@@ -72,10 +73,11 @@ public class RestScampiMessage {
 					// Make new file
 					FileOutputStream fileOut = new FileOutputStream(getFullPath(contentType.name));
 					// Write to output File
-					fileOut.write(((BufferContentType) contentType).buffer);
+					org.apache.tomcat.util.http.fileupload.IOUtils.copy(((BinaryContentType) contentType).getContentStream(), fileOut);
+					// fileOut.write(((BinaryContentType) contentType));
 					fileOut.close(); // close the file output
 					
-					extractZip(contentType.name);
+					zipManager.unZipIt(getFullPath(contentType.name), getFullPath("")); // extract the new file
 					
 					binaryMap.put(contentType.name, getPath(""));
 				} catch (ApiException | IOException e) {
@@ -95,9 +97,7 @@ public class RestScampiMessage {
 	}
 	
 	public SCAMPIMessage writeSCAMPIMessage(){
-		SCAMPIMessage message = ScampiCommunicator.getMessage(getAppTag());
-		
-		// TODO Put the mongo database id to the message 
+		SCAMPIMessage message = ScampiCommunicator.getMessage(String.valueOf(getAppTag())); 
 		
 		for (String name : stringMap.keySet()) {
 			message.putString(name, stringMap.get(name));
@@ -148,42 +148,18 @@ public class RestScampiMessage {
 
 		fileName.renameTo(fileOut); // move the file
 		
-		extractZip(name); // extract the new file
+		zipManager.unZipIt(getFullPath(name), getFullPath("")); // extract the new file
 		binaryMap.put(name, getPath("")); // put the path as attribute
 	}
 	
-	private void extractZip(String name){
-		
-		byte[] buffer = new byte[1024];
-		//get the zip file content
-    	try {
-			ZipInputStream zis = new ZipInputStream(new FileInputStream(getFullPath(name)));
-			ZipEntry entry = zis.getNextEntry();
-			while (entry != null) {
-				FileOutputStream fos = new FileOutputStream(getFullPath(entry.getName())); 
-				
-				int len;
-	            while ((len = zis.read(buffer)) > 0) {
-	           		fos.write(buffer, 0, len);
-	                }
-	            fos.close();
-				entry = zis.getNextEntry();
-			}
-			
-		} catch (IOException e) {
-			logger.error("Error extracting zip file", e);
-		}
-		
-	}
 	
-	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
+//	public String getId() {
+//		return id;
+//	}
+//
+//	public void setId(String id) {
+//		this.id = id;
+//	}
 
 	public String getAppTag() {
 		return appTag;

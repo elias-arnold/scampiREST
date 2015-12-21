@@ -14,6 +14,7 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import de.scampiRest.applib.ScampiCommunicator;
+import de.scampiRest.applib.ScampiMessageHandler;
 
 @SpringBootApplication
 public class Application extends WebMvcConfigurerAdapter {
@@ -27,6 +28,8 @@ public class Application extends WebMvcConfigurerAdapter {
 	@Value("${scampi.mongoPath}")
 	private String mongoPath;
     
+	private ScampiMessageHandler messageHandler;
+	
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 	
     public static void main(String[] args) {
@@ -45,12 +48,7 @@ public class Application extends WebMvcConfigurerAdapter {
 		om.failOnUnknownProperties(false);
 		return om;
 	}
-    
-    @Bean
-    public ScampiCommunicator scampiCommunicator(){
-    	return new ScampiCommunicator();
-    }
-    
+
     @Bean(name="tempFilePath")
     public String tempFilePath(){
     	try {
@@ -88,4 +86,17 @@ public class Application extends WebMvcConfigurerAdapter {
 		}
     	return this.mongoPath;
     }
+    
+    @Bean
+    public ScampiMessageHandler scampiMessageHandler(){
+    	messageHandler = new ScampiMessageHandler();
+    	return messageHandler;
+    }
+
+    
+    @Bean
+    public ScampiCommunicator scampiCommunicator(){
+    	return new ScampiCommunicator();
+    }
+    
 }

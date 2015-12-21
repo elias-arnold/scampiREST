@@ -1,3 +1,5 @@
+mongod --dbpath "/var/tmp/mongoData"
+
 path='Documents/BA-Thesis/Scampi\ App\ Developer\ Package\ 0.4b/bin/java/SCAMPI/'
 
 cd $path

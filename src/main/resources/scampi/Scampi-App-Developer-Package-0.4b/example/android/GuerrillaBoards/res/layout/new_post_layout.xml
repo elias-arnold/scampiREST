@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/PostBackgroundColor">
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:text="New Post"
+            android:id="@+id/textView"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/PostTitleBannerColor"
+            android:textColor="@color/PostTitleTextColor"
+            android:phoneNumber="false"
+            android:textSize="25dp"
+            android:layout_marginBottom="5dp"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/post_field_bg">
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="#Tag"
+                android:id="@+id/textView1"
+                android:gravity="center_vertical|center_horizontal"
+                android:background="@color/PostForegroundColor"
+                android:textColor="@color/PostTextColor"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"/>
+
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/PostTagField"
+                android:layout_gravity="center"
+                android:background="@drawable/post_editfield"
+                android:layout_margin="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/post_field_bg"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp">
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Post"
+                android:id="@+id/textView2"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/PostTextColor"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textSize="20dp"
+                />
+
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/PostMsgField"
+                android:gravity="left|top"
+                android:inputType="textMultiLine"
+                android:linksClickable="false"
+                android:background="@drawable/post_editfield"
+                android:layout_weight="1"
+                android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal">
+
+        <FrameLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/send_button_icon_bg">
+
+            <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/send_icon"
+                    android:layout_gravity="center"/>
+        </FrameLayout>
+
+        <Button
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:text="Send"
+                android:id="@+id/PostSubmitButton"
+                android:textColor="@android:color/white"
+                android:background="@drawable/send_button_style"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

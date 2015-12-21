@@ -1,0 +1,54 @@
+<html>
+<head>
+<script type="text/javascript">
+
+// Subscribe after the page loads
+window.onload = function() {
+    Scampi.subscribe( "hello-service", "receive" );
+}
+
+// Function to publish a Hello World! message
+function publish() {
+    var content = {
+        text: "Hello World!"
+    }
+
+    var settings = {
+        lifetime: 600,
+        appTag: "hello-message"
+    }
+
+    Scampi.publish( JSON.stringify( content ),
+                    JSON.stringify( settings ),
+                    "hello-service" );
+}
+
+// Callback for received messages
+function receive( content, settings ) {
+    var contentModel = JSON.parse( content );
+
+    // Container element for messages
+    var recvField = document.getElementById( "received" );
+    if ( !recvField ) {
+        recvField = document.createElement( "div" );
+        recvField.id = "received";
+        recvField.innerHTML = "<h1>Received</h1>";
+        document.body.appendChild( recvField );
+    }
+
+    // Message element
+    var pre = document.createElement( "pre" );
+    var text = document.createTextNode( contentModel[ "text" ] );
+    pre.appendChild( text );
+    recvField.appendChild( pre );
+}
+
+</script>
+</head>
+
+<body>
+<form>
+    <input type="button" value="Publish!" onclick="publish()" />
+</form>
+</body>
+</html>

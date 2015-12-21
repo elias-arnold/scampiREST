@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:id="@+id/relativeLayout"
+            android:background="@color/MainViewTitleBannerColor">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guerrilla Pics"
+                android:id="@+id/textView"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_centerInParent="true"
+                android:textSize="18dp"
+                android:textColor="@color/MainViewTitleTextColor"
+                android:textStyle="bold"/>
+
+        <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/saveButton"
+                android:src="@drawable/icon_save"
+                android:background="@drawable/publish_button"
+                android:adjustViewBounds="false"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:baselineAlignBottom="false"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:visibility="invisible"/>
+
+        <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/deleteButton"
+                android:src="@drawable/icon_delete"
+                android:background="@drawable/publish_button"
+                android:adjustViewBounds="false"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:baselineAlignBottom="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignTop="@+id/saveButton"
+                android:layout_toRightOf="@+id/saveButton"
+                android:visibility="invisible"/>
+
+        <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/backButton"
+                android:src="@drawable/icon_arrow_left"
+                android:background="@drawable/publish_button"
+                android:adjustViewBounds="false"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:baselineAlignBottom="false"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_alignTop="@+id/saveButton"/>
+    </RelativeLayout>
+
+    <WebView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/webView"/>
+
+</LinearLayout>

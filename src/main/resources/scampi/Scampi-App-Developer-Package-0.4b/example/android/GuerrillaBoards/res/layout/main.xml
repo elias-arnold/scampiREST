@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/TagViewBackgroundColor">
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:text="Guerrilla #Tags"
+            android:id="@+id/textView"
+            android:background="@color/TagViewTitleBannerColor"
+            android:gravity="center_vertical|center_horizontal"
+            android:padding="7dp"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:typeface="sans" android:autoText="false"
+            android:phoneNumber="false"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            />
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:baselineAligned="false"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+            <FrameLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/tag_list_button_icon_bg">
+
+                <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView"
+                        android:src="@drawable/send_icon"
+                        android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:text="Post"
+                    android:id="@+id/TagsPostButton"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/tag_list_button_style"
+                    android:textSize="20dp"
+                    android:clickable="false"
+                    android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/linearLayout">
+
+            <FrameLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/tag_list_button_icon_bg">
+
+                <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView1"
+                        android:src="@drawable/sort_icon"
+                        android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:text="Sort"
+                    android:id="@+id/TagsSortButton"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/tag_list_button_style"
+                    android:textSize="20dp"
+                    android:clickable="false"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/BoardList"
+            android:layout_gravity="center"
+            android:divider="@color/TagViewBackgroundColor"
+            android:dividerHeight="5dp"
+            android:drawSelectorOnTop="false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:smoothScrollbar="true"
+            android:choiceMode="none"
+            android:clickable="false"/>
+
+</LinearLayout>
+

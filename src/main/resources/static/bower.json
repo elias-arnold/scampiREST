@@ -1,0 +1,23 @@
+{
+  "name": "Scampi Rest Loader",
+  "homepage": "https://github.com/elias-arnold/scampiREST",
+  "authors": [
+    "Elias Arnold <elias.arnold@tum.de>"
+  ],
+  "description": "the loader application for scampis rest interface",
+  "main": "app.js",
+  "moduleType": [],
+  "license": "Apache 2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.8",
+    "angular": "angularjs#~1.4.8"
+    "pure": "~0.6.0"
+  }
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Main tag list activity colors -->
+    <color name="TagViewBackgroundColor"        >#ffffff</color>
+    <color name="TagViewTitleBannerColor"       >#323A45</color>
+    <color name="TagViewForegroundColor"        >#ffdcdfe4</color>
+    <color name="TagViewTextColor"              >#6D7F8E</color>
+    <color name="TagViewSelectedColor"          >#B1B5C1</color>
+    <color name="TagViewButtonBorderColor"      >#281414</color>
+
+
+    <!-- Message list activity colors -->
+    <color name="MsgViewBackgroundColor"        >#ffffff</color>
+    <color name="MsgViewTitleBannerColor"       >#323A45</color>
+    <color name="MsgViewTitleTextColor"         >#ffffff</color>
+    <color name="MsgViewForegroundColor"        >#ffdcdfe4</color>
+    <color name="MsgViewTextColor"              >#6D7F8E</color>
+    <color name="MsgViewSelectedColor"          >#B1B5C1</color>
+    <color name="MsgViewButtonBorderColor"      >#281414</color>
+
+
+    <!-- New post activity colors -->
+    <color name="PostBackgroundColor"           >#ffffff</color>
+    <color name="PostTitleBannerColor"          >#323A45</color>
+    <color name="PostTitleTextColor"            >#ffffff</color>
+    <color name="PostForegroundColor"           >#ffdcdfe4</color>
+    <color name="PostTextColor"                 >#6D7F8E</color>
+    <color name="PostBorderColor"               >#ffdcdfe4</color>
+
+
+    <!-- Detail view activity colors -->
+    <color name="DetailViewBackgroundColor"     >#ffffff</color>
+    <color name="DetailTitleBannerColor"        >#323A45</color>
+    <color name="DetailTitleTextColor"          >#ffffff</color>
+    <color name="DetailViewForegroundColor"     >#ffdcdfe4</color>
+    <color name="DetailViewTextColor"           >#6D7F8E</color>
+
+    <!-- Buttons -->
+    <color name="TagListSendButtonDark"         >#0E778A</color>
+    <color name="TagListSendButtonLight"        >#14B9D5</color>
+    <color name="SendButtonDark"                >#8B9E44</color>
+    <color name="SendButtonLight"               >#C6DE64</color>
+
+</resources>

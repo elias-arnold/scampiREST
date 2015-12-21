@@ -1,0 +1,342 @@
+p'.
+2015-12-18 18:26:11.106: <NORMAL>  [] Set ID to 'RSASHA256-908ACF7A1962C0C27FAA4FE2C60FB0651396802CCF3BB11CBA86629289AFA9D6', EID: dtn://RSASHA256-908ACF7A1962C0C27FAA4FE2C60FB0651396802CCF3BB11CBA86629289AFA9D6
+2015-12-18 18:26:11.111: <VERBOSE> [BundleCache] Loading bundles from '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/local_cache'.
+2015-12-18 18:26:11.239: <DEBUG>   [CoreBundle] Loaded header from file, AppTag = '5671753acb6a90523a1d34f0'.
+2015-12-18 18:26:11.241: <NORMAL>  [BundleCache] Non-bundle file in the storage directory 'bundle_serialized_1174199815.dat.bhdat'. Ignoring.
+2015-12-18 18:26:11.241: <VERBOSE> [BundleCache] Loaded 1 bundle(s) (96 bytes) and ignored 1 bundle(s).
+2015-12-18 18:26:11.242: <VERBOSE> [BundleCache] Dropping expired bundle (8461A111028B129293C55F0E2DFF2A91781B2CDF: dtn://RSASHA256-908ACF7A1962C0C27FAA4FE2C60FB0651396802CCF3BB11CBA86629289AFA9D6 -> dtn://scampi.service/test2app, 78B).
+2015-12-18 18:26:11.246: <VERBOSE> [BundleCache] Dropped 96B of expired messages.
+2015-12-18 18:26:11.246: <VERBOSE> [BundleCache] Loading bundles from '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/peer_cache'.
+2015-12-18 18:26:11.247: <VERBOSE> [BundleCache] Loaded 0 bundle(s) (0 bytes) and ignored 0 bundle(s).
+2015-12-18 18:26:11.247: <VERBOSE> [BundleCache] Dropped 0B of expired messages.
+2015-12-18 18:26:11.247: <VERBOSE> [BundleCache] No cache size specified, assuming unlimited space. Add 'localPersistentCache.cacheSize setting to limit the size.
+2015-12-18 18:26:11.248: <VERBOSE> [BundleCache] Loading bundles from '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/persistent_cache'.
+2015-12-18 18:26:11.248: <VERBOSE> [BundleCache] Loaded 0 bundle(s) (0 bytes) and ignored 0 bundle(s).
+2015-12-18 18:26:11.248: <VERBOSE> [BundleCache] Dropped 0B of expired messages.
+2015-12-18 18:26:11.393: <VERBOSE> [Core] Last time SCAMPI was started is 2015-12-16 15:26:09.412
+2015-12-18 18:26:11.449: <DEBUG>   [Core] setupMapTilesManager: null
+2015-12-18 18:26:11.454: <VERBOSE> [RoutingController] Instantiated routing module 'epidemicRouter' (fi.tkk.netlab.dtn.scampi.routing.modules.Epidemic).
+2015-12-18 18:26:11.454: <VERBOSE> [Core] Starting JSON logging.
+2015-12-18 18:26:11.520: <VERBOSE> [JsonLogger] Compressed 1 existing JSON logs into 'jsonarchive.zip'.
+2015-12-18 18:26:11.520: <NORMAL>  [] Starting Core.
+2015-12-18 18:26:11.523: <NORMAL>  [Core] Scampi Core v.1.1: starting main loop.
+2015-12-18 18:26:11.561: <DEBUG>   [Core] Processing event (StartedEvent)
+2015-12-18 18:26:11.561: <NORMAL>  [] *** Started up ***
+2015-12-18 18:26:11.561: <DEBUG>   [Core] StartedEvent took 0.4476 ms
+2015-12-18 18:26:11.563: <DEBUG>   [Core] Processing event (BundleRemovedFromCacheEvent)
+2015-12-18 18:26:11.566: <VERBOSE> [CoreBundle] Deleted store file '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/local_cache/bundle_serialized_1174199815.dat.bdat'.
+2015-12-18 18:26:11.566: <VERBOSE> [CoreBundle] Deleted store file '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/local_cache/bundle_serialized_1174199815.dat.bhdat'.
+2015-12-18 18:26:11.567: <DEBUG>   [Core] BundleRemovedFromCacheEvent took 3.10468 ms
+2015-12-18 18:26:11.641: <DEBUG>   [Core] Processing event (InterfaceFoundEvent)
+2015-12-18 18:26:11.641: <VERBOSE> [InterfaceFoundEvent] New interface found: loopbackInterface: LoopbackCommunicationInterface 0:0:0:0:0:0:0:1%lo
+2015-12-18 18:26:11.642: <NORMAL>  [Console] Started console thread.
+2015-12-18 18:26:11.642: <VERBOSE> [ManagementConsole] Started console for: 0:0:0:0:0:0:0:1%lo port 5050.
+2015-12-18 18:26:11.644: <DEBUG>   [Core] InterfaceFoundEvent took 2.854931 ms
+2015-12-18 18:26:11.644: <DEBUG>   [Core] Processing event (InterfaceFoundEvent)
+2015-12-18 18:26:11.644: <VERBOSE> [InterfaceFoundEvent] New interface found: loopbackInterface: LoopbackCommunicationInterface 127.0.0.1
+2015-12-18 18:26:11.644: <NORMAL>  [Console] Started console thread.
+2015-12-18 18:26:11.644: <VERBOSE> [ManagementConsole] Started console for: 127.0.0.1 port 5050.
+2015-12-18 18:26:11.645: <DEBUG>   [Core] InterfaceFoundEvent took 0.591199 ms
+2015-12-18 18:26:11.674: <DEBUG>   [] Created ServerSocket: port = 7744, bind_if = /0:0:0:0:0:0:0:1%lo
+2015-12-18 18:26:11.674: <DEBUG>   [] Created ServerSocket: port = 5050, bind_if = /127.0.0.1
+2015-12-18 18:26:11.674: <DEBUG>   [] Created ServerSocket: port = 5050, bind_if = /0:0:0:0:0:0:0:1%lo
+2015-12-18 18:26:11.675: <DEBUG>   [] Created ServerSocket: port = 7744, bind_if = /127.0.0.1
+2015-12-18 18:26:11.687: <DEBUG>   [Core] Processing event (InterfaceFoundEvent)
+2015-12-18 18:26:11.687: <VERBOSE> [InterfaceFoundEvent] New interface found: ipv4interface: IPv4CommunicationInterface 172.17.0.1
+2015-12-18 18:26:11.687: <VERBOSE> [PassiveAnnouncer] Listening on 172.17.0.1 port 1234.
+2015-12-18 18:26:11.689: <VERBOSE> [TCPCLBundleService] Starting TCPCLBundleService on port 7895 on 172.17.0.1.
+2015-12-18 18:26:11.689: <DEBUG>   [] Created ServerSocket: port = 1234, bind_if = /172.17.0.1
+2015-12-18 18:26:11.689: <DEBUG>   [TcpJsonMonitor] Starting (172.17.0.1:14141)
+2015-12-18 18:26:11.692: <DEBUG>   [] Created ServerSocket: port = 7895, bind_if = /172.17.0.1
+2015-12-18 18:26:11.718: <DEBUG>   [Core] InterfaceFoundEvent took 31.019356 ms
+2015-12-18 18:26:11.718: <DEBUG>   [Core] Processing event (InterfaceFoundEvent)
+2015-12-18 18:26:11.718: <VERBOSE> [InterfaceFoundEvent] New interface found: ipv4interface: IPv4CommunicationInterface 192.168.2.163
+2015-12-18 18:26:11.723: <VERBOSE> [PassiveAnnouncer] Listening on 192.168.2.163 port 1234.
+2015-12-18 18:26:11.723: <VERBOSE> [TCPCLBundleService] Starting TCPCLBundleService on port 7895 on 192.168.2.163.
+2015-12-18 18:26:11.723: <DEBUG>   [] Created ServerSocket: port = 1234, bind_if = /192.168.2.163
+2015-12-18 18:26:11.723: <DEBUG>   [TcpJsonMonitor] Starting (192.168.2.163:14141)
+2015-12-18 18:26:11.723: <DEBUG>   [] Created ServerSocket: port = 7895, bind_if = /192.168.2.163
+2015-12-18 18:26:11.725: <DEBUG>   [Core] InterfaceFoundEvent took 6.614493 ms
+2015-12-18 18:26:11.725: <DEBUG>   [Core] Processing event (MonitorAddedEvent)
+2015-12-18 18:26:11.725: <DEBUG>   [MonitorAddedEvent] Monitor added (TcpJsonMonitor: 172.17.0.1:14141, clients: 0)
+2015-12-18 18:26:11.725: <DEBUG>   [Core] MonitorAddedEvent took 0.226615 ms
+2015-12-18 18:26:11.726: <DEBUG>   [Core] Processing event (MonitorAddedEvent)
+2015-12-18 18:26:11.726: <DEBUG>   [MonitorAddedEvent] Monitor added (TcpJsonMonitor: 192.168.2.163:14141, clients: 0)
+2015-12-18 18:26:11.726: <DEBUG>   [Core] MonitorAddedEvent took 0.12681 ms
+2015-12-18 18:26:36.068: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:26:36.069: <DEBUG>   [ContactHeaderSendingTask] Sent Contact Header.
+2015-12-18 18:26:36.162: <VERBOSE> [ServLib] clientSeek() clientID=0, service=Hello Service
+2015-12-18 18:26:36.162: <DEBUG>   [LoopbackCommunicationInterface] Got seekService() API call from client.
+2015-12-18 18:26:36.163: <DEBUG>   [Core] Processing event (APIClientSeekEvent)
+2015-12-18 18:26:36.164: <VERBOSE> [APIClientSeekEvent] Processing API client seek 'Hello Service'.
+2015-12-18 18:26:36.164: <VERBOSE> [Core] Adding seeker for 'Hello Service'.
+2015-12-18 18:26:36.164: <DEBUG>   [Core] APIClientSeekEvent took 0.352728 ms
+2015-12-18 18:26:55.731: <NORMAL>  [APIClientHandler] End of stream.
+2015-12-18 18:26:55.732: <DEBUG>   [ServLib] Removed client handler.
+2015-12-18 18:26:55.733: <DEBUG>   [Core] Processing event (APIClientDisconnectedEvent)
+2015-12-18 18:26:55.734: <DEBUG>   [Core] Removed seeker for service 'Hello Service'.
+2015-12-18 18:26:55.734: <DEBUG>   [Core] APIClientDisconnectedEvent took 0.188258 ms
+2015-12-18 18:33:37.272: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:33:37.272: <DEBUG>   [ContactHeaderSendingTask] Sent Contact Header.
+2015-12-18 18:33:37.303: <VERBOSE> [ServLib] clientSeek() clientID=0, service=Hello Service
+2015-12-18 18:33:37.303: <DEBUG>   [LoopbackCommunicationInterface] Got seekService() API call from client.
+2015-12-18 18:33:37.304: <DEBUG>   [Core] Processing event (APIClientSeekEvent)
+2015-12-18 18:33:37.305: <VERBOSE> [APIClientSeekEvent] Processing API client seek 'Hello Service'.
+2015-12-18 18:33:37.305: <VERBOSE> [Core] Adding seeker for 'Hello Service'.
+2015-12-18 18:33:37.305: <DEBUG>   [Core] APIClientSeekEvent took 0.242689 ms
+2015-12-18 18:33:44.307: <DEBUG>   [APIClientHandler] Adding message part for key 'testKey', string: testValue.
+2015-12-18 18:33:44.308: <DEBUG>   [APIClientHandler] Received full API message:
+2015-12-18 18:33:44.308: <DEBUG>   [APIClientHandler] Application Tag: 56744377cb6aa713dbf2af31
+2015-12-18 18:33:44.308: <DEBUG>   [APIClientHandler] Persistent: false
+2015-12-18 18:33:44.308: <DEBUG>   [APIClientHandler] Metadata:
+2015-12-18 18:33:44.308: <DEBUG>   [APIClientHandler] Contents:
+2015-12-18 18:33:44.308: <DEBUG>   [APIClientHandler] testKey
+2015-12-18 18:33:44.308: <DEBUG>   [APIClientHandler] testIntKey
+2015-12-18 18:33:44.308: <DEBUG>   [LoopbackCommunicationInterface] Got messageReceived(SCAMPIMessage)
+2015-12-18 18:33:44.309: <DEBUG>   [Core] Processing event (APIClientPublishEvent)
+2015-12-18 18:33:44.311: <DEBUG>   [Core] APIClientPublishEvent took 2.122864 ms
+2015-12-18 18:33:44.330: <VERBOSE> [ServLib] clientSeek() clientID=0, service=myservice
+2015-12-18 18:33:44.331: <DEBUG>   [LoopbackCommunicationInterface] Got seekService() API call from client.
+2015-12-18 18:33:44.331: <DEBUG>   [Core] Processing event (APIClientSeekEvent)
+2015-12-18 18:33:44.331: <VERBOSE> [APIClientSeekEvent] Processing API client seek 'myservice'.
+2015-12-18 18:33:44.331: <VERBOSE> [Core] Adding seeker for 'myservice'.
+2015-12-18 18:33:44.331: <DEBUG>   [Core] APIClientSeekEvent took 0.159502 ms
+2015-12-18 18:33:44.335: <DEBUG>   [CoreBundle] Loaded header from file, AppTag = '56744377cb6aa713dbf2af31'.
+2015-12-18 18:33:44.337: <DEBUG>   [Core] Processing event (APISCAMPIMessageSerializedEvent)
+2015-12-18 18:33:44.337: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:33:44.338: <VERBOSE> [BundleCache] Added a message to the cache. Occupancy: 96. Bundle: 4600ED0BDAA6AC0ED52F5C13FB15B0BB2A390892: dtn://RSASHA256-908ACF7A1962C0C27FAA4FE2C60FB0651396802CCF3BB11CBA86629289AFA9D6 -> dtn://scampi.service/test2app, 78B
+2015-12-18 18:33:44.338: <DEBUG>   [BundleCache] Moved cached bundle to '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/local_cache/bundle_serialized_670757339.dat.bdat'.
+2015-12-18 18:33:44.338: <DEBUG>   [BundleCache] Moved cached bundle header to '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/local_cache/bundle_serialized_670757339.dat.bhdat'.
+2015-12-18 18:33:44.346: <DEBUG>   [Core] APISCAMPIMessageSerializedEvent took 8.692176 ms
+2015-12-18 18:34:07.271: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:34:37.272: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:34:37.493: <NORMAL>  [APIClientHandler] End of stream.
+2015-12-18 18:34:37.494: <DEBUG>   [ServLib] Removed client handler.
+2015-12-18 18:34:37.495: <DEBUG>   [Core] Processing event (APIClientDisconnectedEvent)
+2015-12-18 18:34:37.495: <DEBUG>   [Core] Removed seeker for service 'Hello Service'.
+2015-12-18 18:34:37.495: <DEBUG>   [Core] Removed seeker for service 'myservice'.
+2015-12-18 18:34:37.495: <DEBUG>   [Core] APIClientDisconnectedEvent took 0.171364 ms
+2015-12-18 18:34:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:34:46.829: <DEBUG>   [ContactHeaderSendingTask] Sent Contact Header.
+2015-12-18 18:34:46.848: <VERBOSE> [ServLib] clientSeek() clientID=0, service=Hello Service
+2015-12-18 18:34:46.848: <DEBUG>   [LoopbackCommunicationInterface] Got seekService() API call from client.
+2015-12-18 18:34:46.849: <DEBUG>   [Core] Processing event (APIClientSeekEvent)
+2015-12-18 18:34:46.849: <VERBOSE> [APIClientSeekEvent] Processing API client seek 'Hello Service'.
+2015-12-18 18:34:46.849: <VERBOSE> [Core] Adding seeker for 'Hello Service'.
+2015-12-18 18:34:46.849: <DEBUG>   [Core] APIClientSeekEvent took 0.275571 ms
+2015-12-18 18:35:11.797: <DEBUG>   [APIClientHandler] Adding message part for key 'testKey', string: testValue.
+2015-12-18 18:35:11.797: <DEBUG>   [APIClientHandler] Received full API message:
+2015-12-18 18:35:11.798: <DEBUG>   [APIClientHandler] Application Tag: 567443cfcb6af6f3232596fd
+2015-12-18 18:35:11.798: <DEBUG>   [APIClientHandler] Persistent: false
+2015-12-18 18:35:11.798: <DEBUG>   [APIClientHandler] Metadata:
+2015-12-18 18:35:11.798: <DEBUG>   [APIClientHandler] Contents:
+2015-12-18 18:35:11.798: <DEBUG>   [APIClientHandler] testKey
+2015-12-18 18:35:11.798: <DEBUG>   [APIClientHandler] testIntKey
+2015-12-18 18:35:11.798: <DEBUG>   [LoopbackCommunicationInterface] Got messageReceived(SCAMPIMessage)
+2015-12-18 18:35:11.799: <DEBUG>   [Core] Processing event (APIClientPublishEvent)
+2015-12-18 18:35:11.799: <DEBUG>   [Core] APIClientPublishEvent took 0.030487 ms
+2015-12-18 18:35:11.801: <DEBUG>   [CoreBundle] Loaded header from file, AppTag = '567443cfcb6af6f3232596fd'.
+2015-12-18 18:35:11.801: <DEBUG>   [Core] Processing event (APISCAMPIMessageSerializedEvent)
+2015-12-18 18:35:11.801: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:35:11.802: <VERBOSE> [BundleCache] Added a message to the cache. Occupancy: 192. Bundle: 7D6D1A7AEB1D3AA70CB9E68F3B20EC134D1F4A86: dtn://RSASHA256-908ACF7A1962C0C27FAA4FE2C60FB0651396802CCF3BB11CBA86629289AFA9D6 -> dtn://scampi.service/test2app, 78B
+2015-12-18 18:35:11.802: <DEBUG>   [BundleCache] Moved cached bundle to '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/local_cache/bundle_serialized_1369868257.dat.bdat'.
+2015-12-18 18:35:11.802: <DEBUG>   [BundleCache] Moved cached bundle header to '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/local_cache/bundle_serialized_1369868257.dat.bhdat'.
+2015-12-18 18:35:11.805: <DEBUG>   [Core] APISCAMPIMessageSerializedEvent took 3.34659 ms
+2015-12-18 18:35:11.846: <VERBOSE> [ServLib] clientSeek() clientID=0, service=myservice
+2015-12-18 18:35:11.847: <DEBUG>   [LoopbackCommunicationInterface] Got seekService() API call from client.
+2015-12-18 18:35:11.847: <DEBUG>   [Core] Processing event (APIClientSeekEvent)
+2015-12-18 18:35:11.847: <VERBOSE> [APIClientSeekEvent] Processing API client seek 'myservice'.
+2015-12-18 18:35:11.847: <VERBOSE> [Core] Adding seeker for 'myservice'.
+2015-12-18 18:35:11.847: <DEBUG>   [Core] APIClientSeekEvent took 0.215669 ms
+2015-12-18 18:35:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:35:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:36:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:36:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:37:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:37:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:38:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:38:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:39:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:39:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:40:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:40:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:41:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:41:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:42:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:42:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:43:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:43:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:44:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:44:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:45:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:45:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:46:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:46:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:47:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:47:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:48:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:48:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:49:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:49:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:50:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:50:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:51:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:51:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:52:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:52:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:53:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:53:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:54:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:54:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:55:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:55:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:56:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:56:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:57:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:57:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:58:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:58:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:59:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 18:59:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:00:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:00:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:01:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:01:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:02:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:02:33.746: <DEBUG>   [APIClientHandler] Adding message part for key 'testKey', string: testValue.
+2015-12-18 19:02:33.746: <DEBUG>   [APIClientHandler] Received full API message:
+2015-12-18 19:02:33.747: <DEBUG>   [APIClientHandler] Application Tag: 56744a39cb6af6f3232596fe
+2015-12-18 19:02:33.747: <DEBUG>   [APIClientHandler] Persistent: false
+2015-12-18 19:02:33.747: <DEBUG>   [APIClientHandler] Metadata:
+2015-12-18 19:02:33.747: <DEBUG>   [APIClientHandler] Contents:
+2015-12-18 19:02:33.747: <DEBUG>   [APIClientHandler] testKey
+2015-12-18 19:02:33.747: <DEBUG>   [APIClientHandler] testIntKey
+2015-12-18 19:02:33.747: <DEBUG>   [LoopbackCommunicationInterface] Got messageReceived(SCAMPIMessage)
+2015-12-18 19:02:33.747: <DEBUG>   [Core] Processing event (APIClientPublishEvent)
+2015-12-18 19:02:33.747: <DEBUG>   [Core] APIClientPublishEvent took 0.026655 ms
+2015-12-18 19:02:33.749: <DEBUG>   [CoreBundle] Loaded header from file, AppTag = '56744a39cb6af6f3232596fe'.
+2015-12-18 19:02:33.750: <DEBUG>   [Core] Processing event (APISCAMPIMessageSerializedEvent)
+2015-12-18 19:02:33.750: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:02:33.750: <VERBOSE> [BundleCache] Added a message to the cache. Occupancy: 288. Bundle: 9C87A4D44FCC89E8254811C75E8AC812DE9B5814: dtn://RSASHA256-908ACF7A1962C0C27FAA4FE2C60FB0651396802CCF3BB11CBA86629289AFA9D6 -> dtn://scampi.service/test2app, 78B
+2015-12-18 19:02:33.750: <DEBUG>   [BundleCache] Moved cached bundle to '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/local_cache/bundle_serialized_1318443731.dat.bdat'.
+2015-12-18 19:02:33.751: <DEBUG>   [BundleCache] Moved cached bundle header to '/home/zinbiel/scampiREST/src/main/resources/scampi/Scampi App Developer Package 0.4b/bin/java/SCAMPI/router/local_cache/bundle_serialized_1318443731.dat.bhdat'.
+2015-12-18 19:02:33.754: <DEBUG>   [Core] APISCAMPIMessageSerializedEvent took 4.556518 ms
+2015-12-18 19:02:33.775: <VERBOSE> [ServLib] clientSeek() clientID=0, service=myservice
+2015-12-18 19:02:33.775: <DEBUG>   [LoopbackCommunicationInterface] Got seekService() API call from client.
+2015-12-18 19:02:33.775: <DEBUG>   [Core] Processing event (APIClientSeekEvent)
+2015-12-18 19:02:33.776: <VERBOSE> [APIClientSeekEvent] Processing API client seek 'myservice'.
+2015-12-18 19:02:33.776: <DEBUG>   [Core] APIClientSeekEvent took 0.10759 ms
+2015-12-18 19:02:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:03:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:03:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:04:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:04:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:05:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:05:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:06:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:06:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:07:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:07:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:08:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:08:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:09:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:09:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:10:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:10:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:11:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:11:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:12:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:12:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:13:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:13:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:14:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:14:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:15:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:15:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:16:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:16:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:17:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:17:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:18:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:18:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:19:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:19:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:20:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:20:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:21:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:21:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:22:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:22:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:23:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:23:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:24:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:24:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:25:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:25:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:26:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:26:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:27:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:27:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:28:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:28:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:29:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:29:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:30:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:30:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:31:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:31:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:32:16.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:32:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:33:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:33:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:34:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:34:46.829: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:35:16.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:35:46.828: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:35:49.344: <NORMAL>  [APIClientHandler] End of stream.
+2015-12-18 19:35:49.344: <DEBUG>   [ServLib] Removed client handler.
+2015-12-18 19:35:49.347: <DEBUG>   [Core] Processing event (APIClientDisconnectedEvent)
+2015-12-18 19:35:49.347: <DEBUG>   [Core] Removed seeker for service 'Hello Service'.
+2015-12-18 19:35:49.347: <DEBUG>   [Core] Removed seeker for service 'myservice'.
+2015-12-18 19:35:49.347: <DEBUG>   [Core] APIClientDisconnectedEvent took 0.07776 ms
+2015-12-18 19:36:03.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:36:03.639: <DEBUG>   [ContactHeaderSendingTask] Sent Contact Header.
+2015-12-18 19:36:03.692: <VERBOSE> [ServLib] clientSeek() clientID=0, service=Hello Service
+2015-12-18 19:36:03.692: <DEBUG>   [LoopbackCommunicationInterface] Got seekService() API call from client.
+2015-12-18 19:36:03.692: <DEBUG>   [Core] Processing event (APIClientSeekEvent)
+2015-12-18 19:36:03.692: <VERBOSE> [APIClientSeekEvent] Processing API client seek 'Hello Service'.
+2015-12-18 19:36:03.692: <VERBOSE> [Core] Adding seeker for 'Hello Service'.
+2015-12-18 19:36:03.692: <DEBUG>   [Core] APIClientSeekEvent took 0.156482 ms
+2015-12-18 19:36:33.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:37:03.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:37:33.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:38:03.640: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:38:33.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:39:03.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:39:33.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:40:03.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:40:33.640: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:41:03.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:41:33.639: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:41:45.126: <NORMAL>  [APIClientHandler] End of stream.
+2015-12-18 19:41:45.126: <DEBUG>   [ServLib] Removed client handler.
+2015-12-18 19:41:45.126: <DEBUG>   [Core] Processing event (APIClientDisconnectedEvent)
+2015-12-18 19:41:45.127: <DEBUG>   [Core] Removed seeker for service 'Hello Service'.
+2015-12-18 19:41:45.127: <DEBUG>   [Core] Removed seeker for service 'myservice'.
+2015-12-18 19:41:45.127: <DEBUG>   [Core] APIClientDisconnectedEvent took 0.231599 ms
+2015-12-18 19:41:56.006: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:41:56.006: <DEBUG>   [ContactHeaderSendingTask] Sent Contact Header.
+2015-12-18 19:41:56.028: <VERBOSE> [ServLib] clientSeek() clientID=0, service=Hello Service
+2015-12-18 19:41:56.028: <DEBUG>   [LoopbackCommunicationInterface] Got seekService() API call from client.
+2015-12-18 19:41:56.029: <DEBUG>   [Core] Processing event (APIClientSeekEvent)
+2015-12-18 19:41:56.031: <VERBOSE> [APIClientSeekEvent] Processing API client seek 'Hello Service'.
+2015-12-18 19:41:56.031: <VERBOSE> [Core] Adding seeker for 'Hello Service'.
+2015-12-18 19:41:56.031: <DEBUG>   [Core] APIClientSeekEvent took 0.267214 ms
+2015-12-18 19:42:26.005: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:42:56.006: <DEBUG>   [APIClientSenderThread] Sending task
+2015-12-18 19:43:14.641: <NORMAL>  [APIClientHandler] End of stream.
+2015-12-18 19:43:14.641: <DEBUG>   [ServLib] Removed client handler.
+2015-12-18 19:43:14.641: <DEBUG>   [Core] Processing event (APIClientDisconnectedEvent)
+2015-12-18 19:43:14.641: <DEBUG>   [Core] Removed seeker for service 'Hello Service'.
+2015-12-18 19:43:14.641: <DEBUG>   [Core] Removed seeker for service 'myservice'.
+2015-12-18 19:43:14.641: <DEBUG>   [Core] APIClientDisconnectedEvent took 0.082956 ms

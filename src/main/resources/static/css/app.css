@@ -1,0 +1,17 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  margin: 5%;
+  text-align: center; }
+
+h1 {
+  font: 300% Helvetica, sans-serif;
+  color: #151; }
+
+.service {
+  text-align: left;
+  border: 1px solid #323836;
+  padding: 1em;
+  margin: 1em; }
+
+/*# sourceMappingURL=app.css.map */
