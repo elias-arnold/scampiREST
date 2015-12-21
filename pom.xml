@@ -52,6 +52,7 @@
 		    <groupId>fi.tkk.netlab.dtn.scampi</groupId>
 		    <artifactId>applib</artifactId>
 		    <version>1.0</version>
+		    <systemPath>${project.basedir}/lib/AppLib-1.0.jar</systemPath>
 		    <!-- <scope>system</scope>
 		    <systemPath>${project.basedir}/lib/AppLib-1.0.jar</systemPath>
 		     -->
