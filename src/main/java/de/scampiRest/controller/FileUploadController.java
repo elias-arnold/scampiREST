@@ -50,6 +50,7 @@ public class FileUploadController {
                 RestScampiMessage restScampiMessage = restScampiMessageRepository.findOne(id);
                 if (restScampiMessage != null){
                 	restScampiMessage.addNewBinary(temporaryFile, name);
+                	restScampiMessageRepository.save(restScampiMessage);
                 } else {
                 	throw new NoMessageIdFound("The id of the scampi message was not found in the mongo database."); // The id was not found in the database
                 }

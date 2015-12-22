@@ -23,7 +23,7 @@ app.controller('appController', ['$scope', function($scope) {
 app.controller('loaderCtrl', ['$scope', '$http','$window', function($scope, $http, $window) {
 	$scope.helloText = "Hello World";
 	
-	$scope.messages = {};
+	$scope.services = {};
 	$scope.getServices = function (){
 		var request = {
 	            method:  'GET',
@@ -31,7 +31,7 @@ app.controller('loaderCtrl', ['$scope', '$http','$window', function($scope, $htt
 	            headers: {'Content-Type' : 'application/json'}
 	        };
         $http(request).success(function (data) {
-        	$scope.messages = data;
+        	$scope.services = data;
         }).error(function(data){
             console.log('Error retrieving messages');
             console.log(data);

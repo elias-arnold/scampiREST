@@ -134,7 +134,7 @@ public class ScampiController {
 				+ restScampiMessage.getService() 
 				+ "/" 
 				+ restScampiMessage.getAppTag() 
-				+ "/index.html");
+				+ "/");
 			
 			return restScampiMessages;
 	}
@@ -154,7 +154,7 @@ public class ScampiController {
 				+ restScampiMessage.getService() 
 				+ "/" 
 				+ restScampiMessage.getAppTag() 
-				+ "/index.html");
+				+ "/");
 			
 			return restScampiMessages;
 	}
