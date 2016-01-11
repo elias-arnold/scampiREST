@@ -10,7 +10,7 @@ curl -v -F name="scampiRest-picture-demo" -F id="$myid" -F file=@"./scampiRest-p
 echo -e "\nupload sucessfull"
 
 echo -e "\nupload a index zip"
-curl -v -F name="yoga-girl" -F id="$myid" -F file=@"./yoga-girl.jpeg.zip" http://localhost/dyn/upload
+curl -v -F name="yoga-girl.jpeg" -F id="$myid" -F file=@"./yoga-girl.jpeg.zip" http://localhost/dyn/upload
 echo -e "\nupload sucessfull"
 
 echo -e "\npublish the message"
