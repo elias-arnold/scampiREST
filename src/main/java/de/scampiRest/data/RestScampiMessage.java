@@ -77,9 +77,9 @@ public class RestScampiMessage {
 					// fileOut.write(((BinaryContentType) contentType));
 					fileOut.close(); // close the file output
 					
-					zipManager.unZipIt(getFullPath(contentType.name), getFullPath("")); // extract the new file
+					zipManager.unZipIt(getNextBinaryName(), getFullPath(contentType.name)); // extract the new file
 					
-					binaryMap.put(contentType.name, getPath(""));
+					binaryMap.put(contentType.name, removeZipExtension(getPath(contentType.name)));
 				} catch (ApiException | IOException e) {
 					logger.error(getFullPath(contentType.name) + " not stored", e);
 					binaryMap.put(contentType.name, "");
@@ -139,7 +139,7 @@ public class RestScampiMessage {
 		return this.storagePath + "/" + this.getPath(name);
 	}
 	
-	public void addNewBinary(File fileName, String name){
+	public void addNewBinary(File fileName, String name, String key){
 		
 		File fileForBinary = new File(getFullPath(""));
 		fileForBinary.mkdirs(); // make necessary directories if not existing
@@ -149,9 +149,24 @@ public class RestScampiMessage {
 		fileName.renameTo(fileOut); // move the file
 		
 		zipManager.unZipIt(getFullPath(name), getFullPath("")); // extract the new file
-		binaryMap.put(name, getPath("")); // put the path as attribute
+		if (key == ""){
+			binaryMap.put(getNextBinaryName(), removeZipExtension(getPath(name))); // put the path as attribute
+		} else {
+			binaryMap.put(key, removeZipExtension(getPath(name))); // put the path as attribute
+		}
 	}
 	
+	private String getNextBinaryName(){
+		int add = binaryMap.size() + 1;
+		return "binary_" + add;
+	}
+	
+	private String removeZipExtension(String name){
+		if (name.endsWith(".zip")){
+			return name.substring(0, name.length()-4);
+		}
+		return name;
+	}
 	
 //	public String getId() {
 //		return id;

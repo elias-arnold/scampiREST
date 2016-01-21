@@ -1,5 +1,6 @@
 package de.scampiRest.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +33,8 @@ public class ScampiController {
 	private static final Logger logger = LoggerFactory.getLogger(ScampiController.class);
 	@Autowired private ScampiCommunicator scampiCommunicator;
 	@Autowired private RestScampiMessageRepository restScampiMessageRepository;
-	
+	@Value("${scampi.publicStorage}")
+	private String nginxPath;
 	@RequestMapping(value = "/")
 	public String welcomeMessage() {
 			return "Liberouter Rest Interface V0.1 alpha";
@@ -44,17 +47,39 @@ public class ScampiController {
 	}
 	
 	@RequestMapping(value = "/message/stage", method = RequestMethod.POST)
-	public String stageScampi(@RequestBody RestScampiMessage restScampiMessage ) throws DatabaseIdInUse{
-		if (restScampiMessage.getAppTag() != null){
-			throw new DatabaseIdInUse("The id is not null");
+	public TreeMap<String, String> stageScampi(@RequestBody RestScampiMessage restScampiMessage ) throws DatabaseIdInUse{
+		if (restScampiMessage.getAppTag() == null || restScampiMessage.getAppTag() == ""){
+			restScampiMessage.setAppTag(null);
+			
+			restScampiMessage = restScampiMessageRepository.insert(restScampiMessage);
+			
+			List<RestScampiMessage> allMessagesFromService = restScampiMessageRepository.findByService(restScampiMessage.getService());
+			// Check if there is any valid main file still existing in the former messages for the service
+			if (allMessagesFromService.size() > 0){
+				for (RestScampiMessage oldRestScampiMessage : allMessagesFromService) {
+					if (oldRestScampiMessage.getBinaryMap().containsKey("main")){
+						File mainFile = new File(nginxPath + "/" + oldRestScampiMessage.getBinaryMap().get("main") + ".zip");
+						if (mainFile.exists()){
+							try {
+								restScampiMessage.addNewBinary(mainFile, mainFile.getName(), "main");
+							} catch (Exception e) {
+								logger.debug("",e);
+							}
+							break;
+						}
+					}
+				}
+			}
+			
+			TreeMap<String, String> tm = new TreeMap<String, String>();
+			tm.put("id", restScampiMessage.getAppTag());
+			return tm;
 		}
-		
-		restScampiMessage = restScampiMessageRepository.insert(restScampiMessage);
-		return restScampiMessage.getAppTag();
+		throw new DatabaseIdInUse("The id is not null");
 	}
 	
 	@RequestMapping(value = "/message/publish/{id}", method = RequestMethod.GET)
-	public String publishScampi(@PathVariable String id) throws InterruptedException, NoMessageIdFound{
+	public TreeMap<String, String> publishScampi(@PathVariable String id) throws InterruptedException, NoMessageIdFound{
 		RestScampiMessage restScampiMessage = restScampiMessageRepository.findOne(id);
 		if (restScampiMessage == null){
 			throw new NoMessageIdFound();
@@ -63,7 +88,9 @@ public class ScampiController {
 		
 		
 		// TODO How do we handle the answere of scampi?
-		return restScampiMessage.getAppTag();
+		TreeMap<String, String> tm = new TreeMap<String, String>();
+		tm.put("id", restScampiMessage.getAppTag());
+		return tm;
 	}
 	
 	@RequestMapping(value = "/subscribe/{serviceName}", method = RequestMethod.GET)

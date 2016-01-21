@@ -3,6 +3,7 @@ package de.scampiRest.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,7 +18,9 @@ import org.springframework.web.multipart.MultipartFile;
 import de.scampiRest.applib.ScampiCommunicator;
 import de.scampiRest.data.RestScampiMessage;
 import de.scampiRest.data.RestScampiMessageRepository;
+import de.scampiRest.exception.KeyNotValid;
 import de.scampiRest.exception.NoMessageIdFound;
+import de.scampiRest.exception.UploadError;
 
 @Controller
 public class FileUploadController {
@@ -33,13 +36,18 @@ public class FileUploadController {
         return "You can upload a file by posting to this same URL.";
     }
 
-    @RequestMapping(value="/upload", method=RequestMethod.POST)
-    public @ResponseBody String handleFileUpload(@RequestParam("id") String id,
-    		@RequestParam("name") String name,
-            @RequestParam("file") MultipartFile file){
+	@RequestMapping(value="/upload", method=RequestMethod.POST)
+    public @ResponseBody TreeMap<String, String> handleFileUpload(@RequestParam("id") String id,
+    		@RequestParam("key") String key,
+            @RequestParam("file") MultipartFile file) throws Exception{
+    	
+    	if (key.contains(".")){
+    		throw new KeyNotValid("Key must not contains dots!");
+    	}
     	
         if (!file.isEmpty()) {
             try {
+            	String name = file.getOriginalFilename();
                 byte[] bytes = file.getBytes();
                 File temporaryFile = new File(filePath + "/" + name);
                 BufferedOutputStream stream =
@@ -49,17 +57,24 @@ public class FileUploadController {
                 
                 RestScampiMessage restScampiMessage = restScampiMessageRepository.findOne(id);
                 if (restScampiMessage != null){
-                	restScampiMessage.addNewBinary(temporaryFile, name);
+                	if (key == null){
+                		restScampiMessage.addNewBinary(temporaryFile, name, "");
+                	} else {
+                		restScampiMessage.addNewBinary(temporaryFile, name, key);
+                	}
+                	
                 	restScampiMessageRepository.save(restScampiMessage);
                 } else {
                 	throw new NoMessageIdFound("The id of the scampi message was not found in the mongo database."); // The id was not found in the database
                 }
-                return "You successfully uploaded " + name + "!";
+                TreeMap<String, String> tm = new TreeMap<String, String>();
+    			tm.put("id", restScampiMessage.getAppTag());
+                return tm;
             } catch (Exception e) {
-                return "You failed to upload " + name + " => " + e.getMessage();
+                throw e;
             }
         } else {
-            return "You failed to upload " + name + " because the file was empty.";
+            throw new UploadError("File was empty");
         }
     }
 

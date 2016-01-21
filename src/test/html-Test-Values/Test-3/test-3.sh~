@@ -1,6 +1,6 @@
 serviceName=$1
 echo -e "\nstage empty message"
-muhh='{"appTag":null,"service":"'$serviceName'","stringMap":{"name":"asdasd-asdasd"},"integerMap":{"testIntKey":1},"floatMap":{},"binaryMap":{},"metaData":{}}'
+muhh='{"appTag":null,"service":"'$serviceName'","stringMap":{"name":"asdasd asdasd"},"integerMap":{"testIntKey":1},"floatMap":{},"binaryMap":{},"metaData":{}}'
 
 echo $muhh
 
