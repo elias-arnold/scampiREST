@@ -157,7 +157,7 @@ public class ScampiController {
 			
 			RestScampiMessage restScampiMessage = restScampiMessages.get(0);
 			
-			response.sendRedirect("http://localhost/" 
+			response.sendRedirect("http://myliberouter.org/" 
 				+ restScampiMessage.getService() 
 				+ "/" 
 				+ restScampiMessage.getAppTag() 
@@ -177,7 +177,7 @@ public class ScampiController {
 			}
 			RestScampiMessage restScampiMessage = restScampiMessages.get(number);
 			
-			response.sendRedirect("http://localhost/" 
+			response.sendRedirect("http://myliberouter.org/" 
 				+ restScampiMessage.getService() 
 				+ "/" 
 				+ restScampiMessage.getAppTag() 

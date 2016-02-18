@@ -1,4 +1,4 @@
-var restUrl = "http://localhost/dyn/";
+var restUrl = "http://myliberouter.org/dyn/";
 
 var app = angular.module('scampiREST', [
     'ngRoute'
