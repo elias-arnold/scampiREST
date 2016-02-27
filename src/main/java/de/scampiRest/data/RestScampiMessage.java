@@ -109,7 +109,8 @@ public class RestScampiMessage {
 			message.putFloat(name, floatMap.get(name));
 		}
 		for (String name : binaryMap.keySet()) {
-			File value = new File(getFullPath(name));
+			// File value = new File(getFullPath(name));
+			File value = new File(storagePath + "/" + binaryMap.get(name) + ".zip");
 			message.putBinary(name, value);
 		}
 		try {
