@@ -46,16 +46,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
-        
-        <!--  AppLib Scampi -->
-        <dependency>
-		    <groupId>fi.tkk.netlab.dtn.scampi</groupId>
-		    <artifactId>applib</artifactId>
-		    <version>1.0</version>
-		    <!-- <scope>system</scope>
-		    <systemPath>${project.basedir}/lib/AppLib-1.0.jar</systemPath>
-		     -->
-		</dependency>
 		
 		<!-- Tests -->
 		<dependency>
