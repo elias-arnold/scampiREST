@@ -2,6 +2,8 @@ package de.scampiRest.applib;
 
 import java.util.concurrent.TimeUnit;
 
+import fi.tkk.netlab.dtn.scampi.applib.AppLib;
+import fi.tkk.netlab.dtn.scampi.applib.SCAMPIMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,8 @@ import de.scampiRest.controller.ScampiController;
 import de.scampiRest.data.RestScampiMessage;
 import de.scampiRest.data.RestScampiMessageRepository;
 import fi.tkk.netlab.dtn.scampi.applib.*;
+
+import fi.tkk.netlab.dtn.scampi.*;
 
 /**
  * Sample Scampi application that sends and receives Hello World! messages. For
